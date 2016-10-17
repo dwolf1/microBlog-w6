@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 require "sinatra"
 require "sinatra/activerecord"
 require "./models"
@@ -7,7 +5,7 @@ require "./models"
 set :database, "sqlite3:userdb.sqlite3"
 
 get '/' do
-	erb :home
+    erb :home;
 end
 
 get '/:name' do
@@ -26,7 +24,6 @@ get '/:name' do
 
 end
 
-
 post '/signup' do 
     # Signup some how
 end
@@ -35,4 +32,3 @@ post '/login' do
     # Login some how
 
 end
->>>>>>> master
