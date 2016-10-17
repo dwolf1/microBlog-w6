@@ -1,8 +1,11 @@
 @font-face {
-	font-famliy: reg-font;
-	src: url("../")
+	font-family: reg-font;
+	src: url("../font/UnicaOne-Regular.ttf");
 }
 
+* {
+    font-family: reg-font;
+}
 
 
 /* HOME */
