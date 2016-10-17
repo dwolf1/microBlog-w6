@@ -1,0 +1,11 @@
+/* HOME */
+
+.large-bar {
+	min-height: 500px;
+	background: green;
+}
+
+.small-bar {
+	min-height: 500px;
+	background: black;
+}
