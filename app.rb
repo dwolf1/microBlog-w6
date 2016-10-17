@@ -7,7 +7,7 @@ require "./models"
 set :database, "sqlite3:userdb.sqlite3"
 
 get '/' do
-
+	erb :home
 end
 
 get '/:name' do
