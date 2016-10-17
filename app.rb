@@ -24,7 +24,6 @@ get '/:name' do
 
 end
 
-
 post '/signup' do 
     # Signup some how
 end
