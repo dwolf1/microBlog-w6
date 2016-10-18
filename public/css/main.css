@@ -19,3 +19,7 @@
 	min-height: 500px;
 	background: black;
 }
+
+.container {
+	max-width: 740px;
+}
