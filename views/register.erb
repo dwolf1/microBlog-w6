@@ -1,14 +1,28 @@
 <link rel="stylesheet" href="/css/login-register.css">
 
+<style>#bio{
+	color: black;</style>
 <div id="registerContainer">
     <h1>This is the register pagez page</h1>
     
     <form>
-        
-    
+        <input type="" name="fname" placeholder="First Name">
+    	<input type="" name="lname" placeholder="Last Name">
+    	<input type="" name="email" placeholder="Email">
+    	<TEXTAREA id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
+    	<input type="" name="password" placeholder="Enter Password">
+    	<input type="" name="password" placeholder="Re-Enter Password">
+    	<!-- probably want selectors for dob -->
+    	<div type="" name="dob">
+    		<select ></select>
+    		<select></select>
+    		<select></select>
+    	</div>
+    	<button type="submit" class="btn btn-primary">Register</button>
     </form>
 
 </div>
+
 
 <!-- NEED THESE THINGS
 t.string :fname
@@ -20,3 +34,8 @@ t.datetime :dob
 t.datetime :lastOn
 t.boolean :admin
 t.string :picture -->
+
+<!-- want to take these inputs and put to db -->
+<!-- add a first value for lastOn automatically -->
+
+<!-- idk what we're doing with picture -->
