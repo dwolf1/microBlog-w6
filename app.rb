@@ -42,3 +42,11 @@ post '/login' do
     # Login some how
 
 end
+
+get '/posts' do
+    erb :posts_test
+end
+
+post '/posts' do
+    erb :posts_test
+end
