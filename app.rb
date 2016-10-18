@@ -9,31 +9,29 @@ before do
     @mainERB = :postfeed;
     @sideERB = :front;
     
-    @myuserid = nil;
-end
-
-get '/' do
-	erb :layout; #, :layout => :profile
+    @myuserid = "ThebestNameoutthere";
 end
 
 
+
+# POST STUFF
 # SIGNUP
-post '/signup' do 
+post '/register' do 
     
     # Signup some how
-    
     @user = User.new(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
     @user.save;
     
 end
 
 # LOGIN
-post '/login' do 
+post '/signin' do 
     # Login some how
     
+    @myuserid = params["email"];
+    
+    @sideERB  = :profile;
     erb :layout;
-    @error = "THis worked I swaer";
-
 end
 
 get '/posts' do
@@ -45,15 +43,30 @@ post '/posts' do
     @mainERB = :posts_test
 end
 
+# GET STUFF
+get '/' do
+	erb :layout; #, :layout => :profile
+end
+
 get '/:name' do
 
     case params[:name]
     when "home"
-        erb :home;
+        @sideERB = :error404;
+        
+    when "login"
+        @sideERB = :error404;
+    
+    when "register"
+        @sideERB = :register;
+        
     when "logout"
-        session.clear
-        erb :logout;
+        @sideERB = :error404;
+        
     else
-        erb :error404;
+        @sideERB = :error404;
+        
     end
+    
+    erb :layout;
 end

@@ -3,7 +3,7 @@
 <div id="frontContainer">
     <h1>Front page</h1>
     
-    <form methodd="POST" action="" id="mainform">
+    <form method="POST" action="" id="mainform">
         <div class="form-group row">
             <div class="col-sm-12">
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -18,7 +18,7 @@
 
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" id="loginbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/login">Sign in</button>
+                <button type="submit" id="loginbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/signin">Sign in</button>
             </div>
             <div class="offset-sm-2 col-sm-6">
                 <button type="submit" id="registerbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/register">Register</button>
@@ -33,18 +33,14 @@
 $(function() {
 
     
-    $("#loginbttn").click(() => {
-        alert("Login");
-        
-        $("#mainform"),action = "/login";
-//        document.mainform.action ="/login";
-//        $(this).closest("form").attr('action', '/login');
-    });
-    
-    $("#registerbttn").click(() => {
-        alert("Register Me");
-    });
-     
+//    $("#loginbttn").click(() => {        
+//    
+//    });
+//    
+//    $("#registerbttn").click(() => {
+//        alert("Register Me");
+//    });
+//     
 });
 
 
