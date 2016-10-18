@@ -2,13 +2,23 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
+require "bundler/setup"
+require "sinatra/flash"
+
+enable :sessions
 
 set :database, "sqlite3:userdb.sqlite3"
+
+def current_user
+    if session[:user_id]
+        @current_user = User.find(session[:user_id])
+    end
+end
+
 
 before do 
     @mainERB = :postfeed;
     @sideERB = :front;
-    
     @myuserid = "ThebestNameoutthere";
 end
 
@@ -19,19 +29,24 @@ end
 post '/register' do 
     
     # Signup some how
-    @user = User.new(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
-    @user.save;
-    
+    @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 # LOGIN
 post '/signin' do 
-    # Login some how
     
     @myuserid = params["email"];
-    
     @sideERB  = :profile;
     erb :layout;
+
+    @user = User.where(username: params[:username]).first
+    if @user && @user.password == params[:password]
+        session[:user_id] = @user.id
+        flash[:notice] = "You've been signed in successfully."
+    else
+        flash[:alert] = "There was a problem signing you in."
+    end
+    redirect "/"
 end
 
 get '/posts' do
