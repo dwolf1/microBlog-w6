@@ -5,7 +5,7 @@ require "./models"
 set :database, "sqlite3:userdb.sqlite3"
 
 before do 
-    @mainERB = :layout;
+    @mainERB = :postfeed;
     @sideERB = :front;
 end
 
