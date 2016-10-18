@@ -22,14 +22,16 @@ before do
     @myuserid = "ThebestNameoutthere";
 end
 
-
+get '/register' do
+    @sideERB = :register;
+    erb :layout;
+end
 
 # POST STUFF
 # SIGNUP
 post '/register' do 
 
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
-
     @sideERB = :register
     erb :layout
 end
