@@ -1,5 +1,4 @@
-# microBlog-w6
-Micro-blogging App 
+# Micro-blogging App 
 
 Collaborate web-design project for NYCDA.
 
