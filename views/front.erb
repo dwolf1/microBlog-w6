@@ -18,20 +18,30 @@
 
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+                <button type="submit" id="loginbttn" class="btn btn-primary btn-lg">Sign in</button>
             </div>
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                <button type="submit" id="registerbttn" class="btn btn-primary btn-lg">Register</button>
             </div>
         </div>
     </form>
 
 </div>
 
-
 <!--javascript for capturing button pressess go here-->
 <script>
+$(function() {
 
+    
+    $("#loginbttn").click(() => {
+        alert("This is working");
+    });
+    
+    $("#registerbttn").click(() => {
+        alert("Register Me");
+    });
+     
+});
 
 
 </script>

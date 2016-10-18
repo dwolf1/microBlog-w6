@@ -5,6 +5,7 @@ require "./models"
 set :database, "sqlite3:userdb.sqlite3"
 
 before do 
+    @mainERB = :layout;
     @sideERB = :front;
 end
 
@@ -26,10 +27,16 @@ get '/:name' do
 
 end
 
+# SIGNUP
 post '/signup' do 
     # Signup some how
+    
+    @user = User.new(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
+    @user.save;
+    
 end
 
+# LOGIN
 post '/login' do 
     # Login some how
 
