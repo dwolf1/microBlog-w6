@@ -19,14 +19,15 @@
         <div class="container" id="maincontainer">
             <div class="row">
                 <div class="col-sm-8 large-bar">
-                    <%= erb @mainERB %>
+                    <%= erb :postfeed %>
                 </div>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 large-bar"><%= yield %></div>
-			<div class="col-sm-4 small-bar" id="sidebar"><%= yield_content :sidebar%></div>
+			<div class="col-sm-4 small-bar" id="sidebar">
+                <%= yield_content :sidebar%></div>
 			<div class="col-sm-4 small-bar" id="sidebar">
                     <%= erb @sideERB %>
             </div>
