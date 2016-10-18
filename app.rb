@@ -14,20 +14,6 @@ get '/' do
 	erb :layout; #, :layout => :profile
 end
 
-get '/:name' do
-
-    case params[:name]
-    when "home"
-        erb :home;
-    when "logout"
-        session.clear
-        erb :logout;
-    else
-        erb :Error404;
-    end
-
-end
-
 # SIGNUP
 post '/signup' do 
     # Signup some how
@@ -44,9 +30,24 @@ post '/login' do
 end
 
 get '/posts' do
-    erb :posts_test
+    @mainERB = :posts_test
+    erb :layout
 end
 
 post '/posts' do
-    erb :posts_test
+    @mainERB = :posts_test
+end
+
+get '/:name' do
+
+    case params[:name]
+    when "home"
+        erb :home;
+    when "logout"
+        session.clear
+        erb :logout;
+    else
+        erb :error404;
+    end
+
 end
