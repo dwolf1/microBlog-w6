@@ -5,7 +5,7 @@ require "./models"
 set :database, "sqlite3:userdb.sqlite3"
 
 before do 
-    @sideERB = :profile;
+    @sideERB = :front;
 end
 
 get '/' do
