@@ -8,6 +8,8 @@ set :database, "sqlite3:userdb.sqlite3"
 before do 
     @mainERB = :postfeed;
     @sideERB = :front;
+    
+    @myuserid = nil;
 end
 
 get '/' do
@@ -25,11 +27,12 @@ get '/:name' do
     else
         erb :Error404;
     end
-
+    
 end
 
 # SIGNUP
 post '/signup' do 
+    
     # Signup some how
     
     @user = User.new(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
@@ -40,5 +43,6 @@ end
 # LOGIN
 post '/login' do 
     # Login some how
-
+    erb :layout;
+    @error = "THis worked I swaer";
 end
