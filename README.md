@@ -3,6 +3,7 @@
 Collaborate web-design project for NYCDA.
 
 Collaborators:
+* https://github.com/jbedette
 * https://github.com/dwolf1
 * https://github.com/Smoreley
 
