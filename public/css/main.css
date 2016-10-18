@@ -5,6 +5,19 @@
 
 * {
     font-family: reg-font;
+    color: white;
+}
+
+body {
+    background-color: #bcf;
+}
+
+#maincontainer {
+    max-width: 800px;
+    margin: 0 auto;
+
+    padding: 0 1em;
+    background-color: rgba(0,0,0,.2);
 }
 
 
@@ -12,7 +25,7 @@
 
 .large-bar {
 	min-height: 500px;
-	background: green;
+	background-color: rgba(0,0,0,.1);
 }
 
 .small-bar {
