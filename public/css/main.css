@@ -7,6 +7,14 @@
     font-family: reg-font;
 }
 
+#maincontainer {
+    max-width: 800px;
+    margin: 0 auto;
+
+    padding: 0 1em;
+    background-color: black;
+}
+
 
 /* HOME */
 

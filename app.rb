@@ -2,12 +2,14 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
-
-
 set :database, "sqlite3:userdb.sqlite3"
 
+before do 
+    @sideERB = :profile;
+end
+
 get '/' do
-	erb :home
+	erb :layout; #, :layout => :profile
 end
 
 get '/:name' do
@@ -15,8 +17,6 @@ get '/:name' do
     case params[:name]
     when "home"
         erb :home;
-    when "cart"
-        erb :cart;
     when "logout"
         session.clear
         erb :logout;
