@@ -46,8 +46,6 @@
 
 <script>
 $(function(){
-  
-    
 
     $("#postbttn").click((e) => {
         e.preventDefault();
@@ -61,6 +59,11 @@ $(function(){
         $(".profile-usertitle-name").html(a.fname);
         alert("answer os: "+a.fname);
 
+    });
+
+    $("#deletebttn").click((e) => {
+        e.preventDefault();
+        changeSideBar("/delete");
     });
   
 });
