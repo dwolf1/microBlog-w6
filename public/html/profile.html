@@ -56,14 +56,12 @@ $(function(){
     });
     
     $.post("getuserinfo", function(result) {
-          var a = $.parseJSON(result)
-          for (i = 0; i < a.length; i++) {
-              $("#form_output").append(results);
-//            (function(j) {
-//              $("#"+a[i]["fname"]).click(() => addtoarray(j) );
-//          })(a[i]["name"] + a[i]["price"] + " ");
-        }
-    
+        var a = $.parseJSON(result);
+        
+        
+        $(".profile-usertitle-name").html(a.fname);
+        alert("answer os: "+a.fname);
+
     });
   
 });

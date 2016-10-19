@@ -3,10 +3,10 @@ require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
 require 'json'
-require "bundler/setup"
+#require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
-require "sinatra/base"
+#require "sinatra/base"
 
 enable :sessions
 set :database, "sqlite3:userdb.sqlite3"
@@ -30,18 +30,7 @@ post '/register' do
 end
 
 # LOGIN
-post '/signin' do 
-    @rtnval = false;
-    
-    if User.exists?(password: params["password"]) && User.exists?(email: params["email"])
-		# pass and username exit
-		@user = User.find_by(email: params[:email], password: params[:password])
-		session[:id] = @user.id;
-        return "good";
-	else
-		# Could not find username or password
-        return nil;
-	end
+post '/signin' do
     
 	if User.exists?(password: params[:password]) && User.exists?(email: params[:email])
 		# pass and username exit
@@ -63,6 +52,7 @@ post '/posts' do
     @mainERB = :posts_test
 end
 
-post 'getuserinfo' do
-   @user 
+post '/getuserinfo' do
+#   @user.to_json
+    User.find(4).to_json
 end
