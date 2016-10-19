@@ -3,6 +3,10 @@ get '/' do
 	erb :error404; #, :layout => :profile
 end
 
+get '/display' do
+    erb :display_tables; #, :layout => :profile
+end
+
 get('/entrance'){ File.read(File.join('public', 'html/entrance.html')) }
 
 get('/register'){ File.read(File.join('public', 'html/register.html')) }

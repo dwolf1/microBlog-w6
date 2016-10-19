@@ -1,0 +1,56 @@
+<style type="text/css">
+	td {
+		border: solid 2px black;
+		padding: 1px 3px;
+	}
+	.tdcenter {
+		text-align: center;
+	}
+
+</style>
+
+<table>
+	<th>List of Users</th>
+		<tr>
+			<td class="tdcenter">ID</td>
+            <td class="tdcenter">First Name</td>
+            <td class="tdcenter">Last Name</td>
+            <td class="tdcenter">Email</td>
+            <td class="tdcenter">Bio</td>
+            <td class="tdcenter">Password</td>
+            <td class="tdcenter">Last On</td>
+            <td class="tdcenter">Admin</td>
+            <td class="tdcenter">Picture</td>
+        </tr>
+	<% @users.each do |u| %>
+	    <tr>
+	    	<td class="tdcenter"><%= u.id %></td>
+            <td><%= u.fname %></td>
+            <td><%= u.lname %></td>
+            <td><%= u.email %></td>
+            <td><%= u.bio %></td>
+            <td><%= u.password %></td>
+            <td><%= u.lastOn %></td>
+            <td><%= u.admin %></td>
+            <td><%= u.picture %></td>
+        </tr>
+	<% end %>
+</table>
+
+<table>
+	<th>List of Posts</th>
+		<tr>
+			<td class="tdcenter">ID</td>
+			<td class="tdcenter">Username</td>
+			<td class="tdcenter">Post</td>
+			<td class="tdcenter">Timetamp</td>
+		</tr>
+	<% @posts.each do |post| %>
+	    <tr>
+	    	<td class="tdcenter"><%= post.id %></td>
+            <td><%= post.username %></td>
+            <td><%= post.post %></td>
+            <td><%= post.timestamp %></td>
+        </tr>
+	<% end %>
+</table>

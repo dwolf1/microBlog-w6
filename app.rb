@@ -16,6 +16,8 @@ def current_user
 end
 
 before do 
+	@users = User.all
+	@posts = Post.all
     @myuserid = "ThebestNameoutthere";
 end
 
