@@ -1,31 +1,32 @@
 <link rel="stylesheet" href="/css/login-register.css">
 
-<style>form{color: black};#bio{color:black};</style>
+<style>form{color: black};#bio{color:black};input{padding:1em};</style>
 
-<div id="registerContainer">
-    <h1>This is the register pagez page</h1>
+<div class="registerContainer col-sm-12">
+    <h1>Register</h1>
     
     <form id="register" action="/register">
-        <div class='row'>
-            <input class="col-sm-6 form-control" type="" name="fname" placeholder="First Name">
-        	<input type="" class="col-sm-6 form-control" name="lname" placeholder="Last Name">
+        <div class='form-group row'>
+            <input class="form-control" type="" name="fname" placeholder="First Name">
+        	<input type="" class="form-control" name="lname" placeholder="Last Name">
         </div>
-        <div class"row">
-        	<input type="email" class="col-sm-6 form-control" name="email" placeholder="Email">
+        <div class="form-group row">
+        	<input type="email" class="form-control" name="email" placeholder="Email">
         	
-        	<input type="" class="col-sm-6 form-control" name="password" placeholder="Enter Password">
+        	<input type="" class="form-control" name="password" placeholder="Enter Password">
         	<!-- this might become a confirm password if we've got extra time
             <input type="" name="passworg" placeholder="Re-Enter Password"> -->
         	<!-- probably want selectors for dob -->
            
         </div>
-        <div class="row">
-             <input type="date" class="col-sm-6 form-control" name="dob">
+        <div class="form-group row">
+             <input type="date" class="form-control" name="dob">
         </div>
-        <TEXTAREA class="form-control" id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
+        <div class="form-group row">
+             <TEXTAREA class="form-control" id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
     	</div>
-        <div class="row">
-    	   <button type="submit" id="regibttn"  class="btn btn-primary">Register</button>
+        <div class="form-group row">
+    	   <button type="submit" id="regibttn"  class="offset-sm-2 btn btn-primary">Register</button>
         </div>
     </form>
 </div>
