@@ -35,9 +35,5 @@ body {
 
 .small-bar {
 /*    max-width: 500px;*/
-	background: rgba(0,0,0,.4);
-}
-
-#badlogin {
-    color: #e88;
+	background: rgba(0,0,0,.7);
 }

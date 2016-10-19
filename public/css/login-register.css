@@ -1,5 +1,5 @@
 #frontContainer {
-    background-color: red;
+    
 }
 
 #registerContainer {
@@ -8,4 +8,9 @@
 
 #loginContainer {
     
+}
+
+#badlogin {
+    display: none;
+    color: #f44;
 }

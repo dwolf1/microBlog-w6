@@ -39,7 +39,8 @@ $(function(){
     $("#signinbttn").click((e) => {
         e.preventDefault();        
         $.post("/signin", $("#mainform").serialize(), function(data) {
-           changeSideBar("/profile");
+           if (data == true) changeSideBar("/profile");
+            else $("#badlogin").show();
         });
     });
 //
