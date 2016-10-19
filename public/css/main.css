@@ -27,17 +27,13 @@ body {
 
 /* HOME */
 
-/*
+
 .large-bar {
 	min-height: 500px;
 	background-color: rgba(0,0,0,.1);
 }
 
 .small-bar {
-	min-height: 500px;
-	background: black;
+    max-width: 500px;
+	background: green;
 }
-
-.container {
-	max-width: 840px;
-}*/
