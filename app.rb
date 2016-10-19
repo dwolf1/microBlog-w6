@@ -5,6 +5,7 @@ require "./models"
 require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
+require "sinatra/base"
 
 enable :sessions
 set :database, "sqlite3:userdb.sqlite3"
