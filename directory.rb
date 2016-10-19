@@ -5,6 +5,8 @@ end
 
 get('/entrance'){ File.read(File.join('public', 'html/entrance.html')) }
 
+get('/register'){ File.read(File.join('public', 'html/register.html')) }
+
 get('/profile'){ File.read(File.join('public', 'html/profile.html')) }
 
 get('/account'){ File.read(File.join('public', 'html/account.html')) }

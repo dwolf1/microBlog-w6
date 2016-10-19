@@ -3,10 +3,10 @@
 <div id="frontContainer">
     <h1>Front page</h1>
     
-    <form id="mainform">
+    <form id="mainform" action="/signin">
         <div class="form-group row">
             <div class="col-sm-12">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
             </div>
         </div>
         
@@ -18,10 +18,10 @@
 
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" id="loginbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/signin">Sign in</button>
+                <button type="submit" id="signinbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/signin">Sign in</button>
             </div>
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" id="registerbttn" class="btn btn-primary btn-lg"  id="submit">Register</button>
+                <button type="submit" id="registerbttn" class="btn btn-primary btn-lg"  id="registerbttn">Register</button>
             </div>
         </div>
     </form>
@@ -34,37 +34,57 @@
 <script>
     
 $(function(){
+//        
+    $("#signinbttn").click((e) => {        
+        // ajax request to see if succesfull login
+        e.preventDefault();
         
-//    $("#loginbttn").click(() => {        
+        
+        $.post("/signin", $("#mainform").serialize(), function(data) {
+//           var a = $.parseJSON(data) 
+            alert("was good "+data);
+        });
+        
+//        changeSideBar("/register");
+    });
 //
+//    $("#registerbttn").click((e) => {
+//        e.preventDefault();
+//        changeSideBar("/register");
 //    });
-
-    $("#registerbttn").click((e) => {
-        e.preventDefault();
-        changeSideBar("/account");
-    });
     
     
-    $('#mainform').on('submit', e => {
-        e.preventDefault();
-        
-//        $.ajax({
-////            url : $(this).attr('action') || window.location.pathname,
-//            url : "/register",
-//            type: "GET",
-//            data: $(this).serialize(),
-//            success: function (data) {
-//                $("#form_output").html(data);
-//                alert("asdad");
-//            },
-//            error: function (jXHR, textStatus, errorThrown) {
-//                alert(errorThrown);
-//            }
-//        });
-    });
+//    $('#mainform').on('submit', e => {
+//        e.preventDefault();
+//        alert("calling");
+//        submitForm("#mainform");
+//        
+////        $.ajax({
+//////            url : $(this).attr('action') || window.location.pathname,
+////            url : "/signin",
+////            type: "post",
+////            data: $(this).serialize(),
+////            success: function (data) {
+////                
+////                $("#form_output").html(data);
+////                
+////                alert("success");
+////            },
+////            error: function (jXHR, textStatus, errorThrown) {
+////                alert("st "+errorThrown);
+////            }
+////        });
+//    });
 
   
 });
 
+function submitForm(form){
+    var url = form.attr("action");
+    var formData = $(form).serializeArray();
+    $.post(url, formData).done(function (data) {
+        alert(data);
+    });
+}
 
 </script>

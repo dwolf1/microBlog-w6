@@ -28,15 +28,17 @@ end
 
 # LOGIN
 post '/signin' do 
-
-    @user = User.where(username: params[:username]).first
-    if @user && @user.password == params[:password]
-        session[:user_id] = @user.id
-        flash[:notice] = "You've been signed in successfully."
-    else
-        flash[:alert] = "There was a problem signing you in."
-    end
-    redirect "/"
+    
+    @a = params[:email]
+    
+#    @user = User.where(username: params[:username]).first
+#    if @user && @user.password == params[:password]
+#        session[:user_id] = @user.id
+#        flash[:notice] = "You've been signed in successfully."
+#    else
+#        flash[:alert] = "There was a problem signing you in."
+#    end
+    
 end
 
 get '/posts' do
