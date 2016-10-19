@@ -20,8 +20,9 @@
         
         <!-- SIDEBAR BUTTONS -->
         <div class="profile-userbuttons">
-            <button type="button" class="btn btn-success btn-sm">Follow</button>
-            <button type="button" class="btn btn-danger btn-sm">Message</button>
+            <button type="button" class="btn btn-success btn-sm edit">Edit</button>
+            <button type="button" class="btn btn-primary btn-sm logout">Logout</button>
+            <button type="button" class="btn btn-danger btn-sm delete">Delete</button>
         </div>
                             
         <div class="form-group row">
@@ -46,9 +47,7 @@
 <script>
 $(function(){
   
-    // $("form").submit(() => {
-    //     changeSideBar("/profile");
-    // };
+    
 
     $("#postbttn").click((e) => {
         e.preventDefault();
