@@ -32,6 +32,7 @@
         <button id="ebttn">entrance</button>
         <button id="abttn">account</button>
         <button id="pbttn">profile</button>
+        <button id="tbttn">tables</button>
 	
     </body>
 </html>
@@ -50,6 +51,9 @@ $(function() {
     
     $("#pbttn").click(() => {
         changeSideBar("/profile");
+    });
+    $("#tbttn").click(() => {
+        window.location.href='/display';
     });
     
 });
