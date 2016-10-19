@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
+require 'json'
 require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
@@ -60,4 +61,8 @@ end
 
 post '/posts' do
     @mainERB = :posts_test
+end
+
+post 'getuserinfo' do
+   @user 
 end

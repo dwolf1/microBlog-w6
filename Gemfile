@@ -5,6 +5,6 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"
-gem 'json'
+gem "json"
 gem "sinatra-contrib"
 gem "sinatra-flash"
