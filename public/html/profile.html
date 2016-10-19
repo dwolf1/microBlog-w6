@@ -54,6 +54,17 @@ $(function(){
         e.preventDefault();
         changeSideBar("/posts");
     });
+    
+    $.post("getuserinfo", function(result) {
+          var a = $.parseJSON(result)
+          for (i = 0; i < a.length; i++) {
+              $("#form_output").append(results);
+//            (function(j) {
+//              $("#"+a[i]["fname"]).click(() => addtoarray(j) );
+//          })(a[i]["name"] + a[i]["price"] + " ");
+        }
+    
+    });
   
 });
 
