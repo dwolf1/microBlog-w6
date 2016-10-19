@@ -1,31 +1,55 @@
 <link rel="stylesheet" href="/css/profile-account.css">
 
 <div id="profileContainer">
-    <h1> This is the profile </h1>
+    <h2> This is the profile </h2>
     
-    <div class="profile-sidebar">
-        <!-- SIDEBAR USERPIC -->
-        <div class="profile-userpic">
-            <img src="./image/user_default.png" class="img-responsive" alt="">
-        </div>
-        <!-- SIDEBAR USER TITLE -->
-        <div class="profile-usertitle">
-            <div class="profile-usertitle-name">
-                Marcus Doe
+                <!-- USER INFO -->
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <div class="profile-usertitle-name">
+                    Marcus Doe
+                </div>
             </div>
-            <div class="profile-usertitle-job">
-                Developer
+
+            <div class="col-sm-6">
+                <div class="profile-usertitle-job">
+                    Developer
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- SIDEBAR USERPIC -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="profile-userpic">
+                    <img src="./image/user_default.png" class="img-responsive" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12" id="userbio">
+                This is the Bio
             </div>
         </div>
         
         <!-- SIDEBAR BUTTONS -->
-        <div class="profile-userbuttons">
-            <button type="button" class="btn btn-success btn-sm edit" id="editbttn">Edit</button>
-            <button type="button" class="btn btn-primary btn-sm logout" id="logoutbttn">Logout</button>
-            <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
+        <div class="row">
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-success btn-sm edit" id="editbttn">Edit</button>
+            </div>
+
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary btn-sm logout" id="logoutbttn">Logout</button>
+            </div>
+
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
+            </div>
         </div>
                             
-        <div class="form-group row">
+        <div class="row">
             <div class="col-sm-4">
                 <a href="#"><div class="glyphicon glyphicon-home"></div></a>
             </div>
@@ -39,10 +63,7 @@
             </div>
         </div>
         
-    </div>   
 </div>
-
-<div id="form_output"></div>
 
 <script>
 $(function(){
@@ -57,13 +78,10 @@ $(function(){
         
         
         $(".profile-usertitle-name").html(a.fname);
+        $("#userbio").html(a.bio);
+        
         alert("answer os: "+a.fname);
 
-    });
-
-    $("#deletebttn").click((e) => {
-        e.preventDefault();
-        changeSideBar("/delete");
     });
   
 });

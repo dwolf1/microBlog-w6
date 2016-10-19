@@ -32,21 +32,38 @@
             <small id="fileHelp" class="form-text text-muted">Slected photo can be no larger then 1024px.</small>
         </div>
         
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input"> Check me out </label>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        
     </form>
+    
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="checkbox">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">Delete Account </label>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
+        </div>
+    </div>
+
 </div>
 
 
 <script>
 $(fucntion(){
+    $("#deletebttn").click((e) => {
+        e.preventDefault();
+        changeSideBar("/delete");
+    });
+  
   
     $("form").submit(() => {
         changeSideBar("/profile");
-    };
+    };               
 });
 
 </script>

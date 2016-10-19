@@ -1,6 +1,6 @@
 @font-face {
 	font-family: reg-font;
-	src: url("../font/UnicaOne-Regular.ttf");
+	src: url("../font/NotoSans-Regular.ttf");
 }
 
 * {
@@ -29,12 +29,13 @@ body {
 
 
 .large-bar {
+    overflow: hidden;
 	min-height: 500px;
 	background-color: rgba(0,0,0,.1);
 }
 
 .small-bar {
-/*    max-width: 500px;*/
+    overflow: hidden;
 	background: rgba(0,0,0,.7);
     min-height: 100vh;
 }

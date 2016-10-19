@@ -57,6 +57,5 @@ post '/posts' do
 end
 
 post '/getuserinfo' do
-#   @user.to_json
     User.find(session[:id]).to_json
 end

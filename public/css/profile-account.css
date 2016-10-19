@@ -9,3 +9,16 @@
     width: 100%;
     margin: 0 auto;
 }
+
+#userbio {
+    background-color:red;
+}
+
+.row {
+    padding: 1em;
+}
+
+.btn {
+    width: 100%;
+    
+}
