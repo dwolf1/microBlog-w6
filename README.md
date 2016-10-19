@@ -28,3 +28,14 @@ Legit
 User Info
 username, fName, lName, Email, dob, Bio, LastActive, JoinDate, password, 
 Profile: Picture, Bio, posts, lastactive.
+
+
+CHECKLIST
+
+- SESSION THINGS
+- PROFILE DISPLAY FROM DB
+	- SEE OTHER PROFILES
+- LOGOUT 
+- DELETE
+- POSTING
+- UPDATE PICTURE
