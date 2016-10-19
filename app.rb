@@ -16,7 +16,7 @@ def current_user
 end
 
 before do 
-    @myuserid = User.find(4).fname;
+    @current_user = "This is the current user";
 	@users = User.all
 	@posts = Post.all
 end
@@ -30,15 +30,19 @@ end
 
 # LOGIN
 post '/signin' do 
+    @rtnval = false;
     
-    @user = User.where(email: params[:email]).first
-    if @user && @user.password == params[:password]
-        session[:user_id] = @user.id
-        return true;
-    else
-        return false;
-    end
-    
+    if User.exists?(password: params["password"]) && User.exists?(email: params["email"])
+		# pass and username exit
+		@user = User.find_by(email: params[:email], password: params[:password])
+		session[:id] = @user.id;
+        @current_user = "This is the";
+        return "good";
+	else
+		# Could not find username or password
+        return nil;
+	end   
+
 end
 
 get '/posts' do

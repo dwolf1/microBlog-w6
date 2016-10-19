@@ -12,5 +12,17 @@
 
 #badlogin {
     display: none;
-    color: #f44;
+    color: black;
+    padding: 1em;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 7.5px;
+}
+
+#signinbttn {
+    width: 100%;
+}
+
+#registerbttn {
+    width: 100%;
 }

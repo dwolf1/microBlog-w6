@@ -36,4 +36,5 @@ body {
 .small-bar {
 /*    max-width: 500px;*/
 	background: rgba(0,0,0,.7);
+    min-height: 100vh;
 }
