@@ -3,35 +3,43 @@
 <div id="profileContainer">
     <h1> This is the profile </h1>
     
-    <form>
-        <div class="form-group">
-            <label for="userEmail">Email address</label>
-            <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        
-        <div class="form-group">
-            <label for="userPassword">Password</label>
-            <input type="password" class="form-control" id="userPassword" placeholder="Password">
-        </div>
-        
-        <div class="form-group">
-            <label for="userBIO">Example textarea</label>
-            <textarea class="form-control" id="userBIO" rows="3"></textarea>
-        </div>
-        
-        <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-        </div>
-        
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input"> Check me out </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <div class="profile-sidebar">
+            <!-- SIDEBAR USERPIC -->
+            <div class="profile-userpic">
+                <img src="./image/user_default.png" class="img-responsive" alt="">
+            </div>
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    Marcus Doe
+                </div>
+                <div class="profile-usertitle-job">
+                    Developer
+                </div>
+            </div>
+            
+            
+            <!-- SIDEBAR BUTTONS -->
+            <div class="profile-userbuttons">
+                <button type="button" class="btn btn-success btn-sm">Follow</button>
+                <button type="button" class="btn btn-danger btn-sm">Message</button>
+            </div>
+            <!-- END SIDEBAR BUTTONS -->
+            <!-- SIDEBAR MENU -->
+            <div class="profile-usermenu">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Overview </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Account Settings </a>
+                    </li>
+                </ul>
+            </div>
 </div>
 
 

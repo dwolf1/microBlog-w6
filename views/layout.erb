@@ -28,6 +28,10 @@
             </div>
         </div>
         <%= @myuserid %>
+        
+        <button id="ebttn">entrance</button>
+        <button id="abttn">account</button>
+        <button id="pbttn">profile</button>
 	
     </body>
 </html>
@@ -35,6 +39,19 @@
 <script>
 $(function() {
     changeSideBar("/entrance");
+    
+    $("#ebttn").click(() => {
+        changeSideBar("/entrace");
+    });
+    
+    $("#abttn").click(() => {
+        changeSideBar("/account");
+    });
+    
+    $("#pbttn").click(() => {
+        changeSideBar("/profile");
+    });
+    
 });
     
     
