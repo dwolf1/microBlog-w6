@@ -7,22 +7,22 @@
     
     <form id="register" action="/register">
         <div class='row'>
-            <input type="" name="fname" placeholder="First Name">
-        	<input type="" name="lname" placeholder="Last Name">
+            <input class="col-sm-6 form-control" type="" name="fname" placeholder="First Name">
+        	<input type="" class="col-sm-6 form-control" name="lname" placeholder="Last Name">
         </div>
         <div class"row">
-        	<input type="email" name="email" placeholder="Email">
+        	<input type="email" class="col-sm-6 form-control" name="email" placeholder="Email">
         	
-        	<input type="" name="password" placeholder="Enter Password">
+        	<input type="" class="col-sm-6 form-control" name="password" placeholder="Enter Password">
         	<!-- this might become a confirm password if we've got extra time
             <input type="" name="passworg" placeholder="Re-Enter Password"> -->
         	<!-- probably want selectors for dob -->
            
         </div>
         <div class="row">
-             <input type="date" name="dob">
+             <input type="date" class="col-sm-6 form-control" name="dob">
         </div>
-        <TEXTAREA id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
+        <TEXTAREA class="form-control" id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
     	</div>
         <div class="row">
     	   <button type="submit" id="regibttn"  class="btn btn-primary">Register</button>
