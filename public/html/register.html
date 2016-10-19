@@ -27,6 +27,7 @@
     	</div>
         <div class="form-group row">
     	   <button type="submit" id="regibttn"  class="offset-sm-2 btn btn-primary">Register</button>
+           <button type="submit" id="cancelBttn"  class="offset-sm-2 btn btn-danger">Cancel</button>
         </div>
     </form>
 </div>
@@ -47,9 +48,15 @@ $(function(){
         
 //        c
     });
-
+    $("#cancelBttn").click((e) => {
+        e.preventDefault();
+        alert("was bad");
+        changeSideBar("/entrance");
+    });
   
 });
+
+
 
 function submitForm(form){
     var url = form.attr("action");
