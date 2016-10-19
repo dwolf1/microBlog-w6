@@ -16,7 +16,7 @@ def current_user
 end
 
 before do 
-    @myuserid = User.all;
+    @myuserid = User.find(4).fname;
 end
 
 # POST STUFF
