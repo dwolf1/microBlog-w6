@@ -18,12 +18,12 @@ end
 before do 
 	@users = User.all
 	@posts = Post.all
-    @myuserid = "ThebestNameoutthere";
+    @myuserid = User.all;
 end
 
 # POST STUFF
 # SIGNUP
-get '/register' do 
+post '/register' do 
 
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
@@ -31,15 +31,13 @@ end
 # LOGIN
 post '/signin' do 
     
-    @a = params[:email]
-    
-#    @user = User.where(username: params[:username]).first
-#    if @user && @user.password == params[:password]
-#        session[:user_id] = @user.id
-#        flash[:notice] = "You've been signed in successfully."
-#    else
-#        flash[:alert] = "There was a problem signing you in."
-#    end
+    @user = User.where(email: params[:email]).first
+    if @user && @user.password == params[:password]
+        session[:user_id] = @user.id
+        return true;
+    else
+        return false;
+    end
     
 end
 

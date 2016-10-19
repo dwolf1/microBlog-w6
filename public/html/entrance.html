@@ -4,6 +4,8 @@
     <h1>Front page</h1>
     
     <form id="mainform" action="/signin">
+        
+        <div id="badlogin">Invalid Login information, Please do not try agian, we are busy.</div>
         <div class="form-group row">
             <div class="col-sm-12">
                 <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -28,7 +30,6 @@
 
 </div>
 
-
 <div id="form_output"></div>
 <!--javascript for capturing button pressess go here-->
 <script>
@@ -38,7 +39,8 @@ $(function(){
     $("#signinbttn").click((e) => {
         e.preventDefault();        
         $.post("/signin", $("#mainform").serialize(), function(data) {
-           changeSideBar("/profile");
+           if (data == true) changeSideBar("/profile");
+            else $("#badlogin").show();
         });
     });
 //
@@ -48,29 +50,6 @@ $(function(){
            changeSideBar("/register");
         });
     });
-    
-    
-//    $('#mainform').on('submit', e => {
-//        e.preventDefault();
-//        alert("calling");
-//        submitForm("#mainform");
-//        
-////        $.ajax({
-//////            url : $(this).attr('action') || window.location.pathname,
-////            url : "/signin",
-////            type: "post",
-////            data: $(this).serialize(),
-////            success: function (data) {
-////                
-////                $("#form_output").html(data);
-////                
-////                alert("success");
-////            },
-////            error: function (jXHR, textStatus, errorThrown) {
-////                alert("st "+errorThrown);
-////            }
-////        });
-//    });
 
   
 });

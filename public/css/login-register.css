@@ -9,3 +9,8 @@
 #loginContainer {
     
 }
+
+#badlogin {
+    display: none;
+    color: #f44;
+}
