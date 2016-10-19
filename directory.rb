@@ -11,6 +11,7 @@ get('/profile'){ File.read(File.join('public', 'html/profile.html')) }
 
 get('/account'){ File.read(File.join('public', 'html/account.html')) }
 
+get('/posts'){ File.read(File.join('public', 'html/posts.html')) }
 
 get '/:name' do
     erb :error404
