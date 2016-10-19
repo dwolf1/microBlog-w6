@@ -21,7 +21,7 @@ end
 
 # POST STUFF
 # SIGNUP
-get '/register' do 
+post '/register' do 
 
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
