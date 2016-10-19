@@ -40,15 +40,21 @@
                     </li>
                 </ul>
             </div>
+            <button id="submitbttn" type="submit" class="btn btn-primary">Post</button>
 </div>
 
 
 <script>
-$(fucntion(){
+$(function(){
   
     $("form").submit(() => {
         changeSideBar("/profile");
     };
+
+    $("#submitbttn").click((e) => {
+        e.preventDefault();
+        changeSideBar("/posts");
+    });
   
 });
 
