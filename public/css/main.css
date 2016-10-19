@@ -10,19 +10,24 @@
 
 body {
     background-color: #bcf;
+    padding: 0;
+    margin: 0;
 }
 
 #maincontainer {
-    max-width: 800px;
+/*
+    max-width: 1000px;
     margin: 0 auto;
 
     padding: 0 1em;
+*/
     background-color: rgba(0,0,0,.2);
 }
 
 
 /* HOME */
 
+/*
 .large-bar {
 	min-height: 500px;
 	background-color: rgba(0,0,0,.1);
@@ -34,5 +39,5 @@ body {
 }
 
 .container {
-	max-width: 740px;
-}
+	max-width: 840px;
+}*/

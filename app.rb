@@ -16,8 +16,6 @@ def current_user
 end
 
 before do 
-    @mainERB = :postfeed;
-    @sideERB = :front;
     @myuserid = "ThebestNameoutthere";
 end
 
@@ -33,7 +31,7 @@ post '/signin' do
     
     @myuserid = params["email"];
     @sideERB  = :profile;
-    erb :layout;
+    erb :error404;
 
     @user = User.where(username: params[:username]).first
     if @user && @user.password == params[:password]
