@@ -12,13 +12,13 @@
         
         <div class="form-group row">
             <div class="col-sm-12">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
             </div>
         </div>
 
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-6">
-                <button type="submit" id="signinbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/signin">Sign in</button>
+                <button type="submit" id="signinbttn" class="btn btn-primary btn-lg">Sign in</button>
             </div>
             <div class="offset-sm-2 col-sm-6">
                 <button type="submit" id="registerbttn" class="btn btn-primary btn-lg"  id="registerbttn">Register</button>
@@ -35,23 +35,19 @@
     
 $(function(){
 //        
-    $("#signinbttn").click((e) => {        
-        // ajax request to see if succesfull login
-        e.preventDefault();
-        
-        
+    $("#signinbttn").click((e) => {
+        e.preventDefault();        
         $.post("/signin", $("#mainform").serialize(), function(data) {
-//           var a = $.parseJSON(data) 
-            alert("was good "+data);
+           changeSideBar("/profile");
         });
-        
-//        changeSideBar("/register");
     });
 //
-//    $("#registerbttn").click((e) => {
-//        e.preventDefault();
-//        changeSideBar("/register");
-//    });
+    $("#registerbttn").click((e) => {
+        e.preventDefault();
+        $.post("/signin", $("#mainform").serialize(), function(data) {
+           changeSideBar("/register");
+        });
+    });
     
     
 //    $('#mainform').on('submit', e => {
