@@ -17,6 +17,8 @@ end
 
 before do 
     @myuserid = User.find(4).fname;
+	@users = User.all
+	@posts = Post.all
 end
 
 # POST STUFF
