@@ -1,24 +1,32 @@
 <link rel="stylesheet" href="/css/login-register.css">
 
-<style>form{color: black};</style>
+<style>form{color: black};#bio{color:black};</style>
 
 <div id="registerContainer">
     <h1>This is the register pagez page</h1>
     
     <form id="register" action="/register">
-        <input type="" name="fname" placeholder="First Name">
-    	<input type="" name="lname" placeholder="Last Name">
-    	<input type="email" name="email" placeholder="Email">
-    	
-    	<input type="" name="password" placeholder="Enter Password">
-    	<!-- this might become a confirm password if we've got extra time
-        <input type="" name="passworg" placeholder="Re-Enter Password"> -->
-    	<!-- probably want selectors for dob -->
-        <input type="date" name="dob">
-        <div>
+        <div class='row'>
+            <input type="" name="fname" placeholder="First Name">
+        	<input type="" name="lname" placeholder="Last Name">
+        </div>
+        <div class"row">
+        	<input type="email" name="email" placeholder="Email">
+        	
+        	<input type="" name="password" placeholder="Enter Password">
+        	<!-- this might become a confirm password if we've got extra time
+            <input type="" name="passworg" placeholder="Re-Enter Password"> -->
+        	<!-- probably want selectors for dob -->
+           
+        </div>
+        <div class="row">
+             <input type="date" name="dob">
+        </div>
         <TEXTAREA id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
     	</div>
-    	<button type="submit" id="regibttn"  class="btn btn-primary">Register</button>
+        <div class="row">
+    	   <button type="submit" id="regibttn"  class="btn btn-primary">Register</button>
+        </div>
     </form>
 </div>
 
