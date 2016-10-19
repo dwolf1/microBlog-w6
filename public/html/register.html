@@ -27,6 +27,7 @@
     	</div>
         <div class="form-group row">
     	   <button type="submit" id="regibttn"  class="offset-sm-2 btn btn-primary">Register</button>
+           <button type="submit" id="cancel"  class="offset-sm-2 btn btn-danger">Cancel</button>
         </div>
     </form>
 </div>
@@ -48,6 +49,19 @@ $(function(){
 //        c
     });
 
+  
+});
+
+$(function(){
+//        
+    $("#cancel").click((e) => {        
+        
+        e.preventDefault();
+        
+        
+       
+        changeSideBar("/entrance");
+        
   
 });
 
