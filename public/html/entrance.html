@@ -3,7 +3,7 @@
 <div id="frontContainer">
     <h1>Front page</h1>
     
-    <form method="POST" action="" id="mainform">
+    <form id="mainform">
         <div class="form-group row">
             <div class="col-sm-12">
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -21,26 +21,52 @@
                 <button type="submit" id="loginbttn" class="btn btn-primary btn-lg" onclick="this.form.action=this.value" value="/signin">Sign in</button>
             </div>
             <div class="offset-sm-2 col-sm-6">
-                <a class="btn btn-primary btn-lg" href="/register">Register</a>
+                <button type="submit" id="registerbttn" class="btn btn-primary btn-lg"  id="submit">Register</button>
             </div>
         </div>
     </form>
 
 </div>
 
+
+<div id="form_output"></div>
 <!--javascript for capturing button pressess go here-->
 <script>
-$(function() {
-
     
+$(function(){
+        
 //    $("#loginbttn").click(() => {        
-//    
+//
 //    });
-//    
-//    $("#registerbttn").click(() => {
-//        alert("Register Me");
-//    });
-//     
+
+    $("#registerbttn").click((e) => {
+        e.preventDefault();
+        alert("Register Me");
+        changeSideBar("/profile");
+    });
+    alert("start");
+    
+    
+    $('#mainform').on('submit', e => {
+        e.preventDefault();
+        
+        
+//        $.ajax({
+////            url : $(this).attr('action') || window.location.pathname,
+//            url : "/register",
+//            type: "GET",
+//            data: $(this).serialize(),
+//            success: function (data) {
+//                $("#form_output").html(data);
+//                alert("asdad");
+//            },
+//            error: function (jXHR, textStatus, errorThrown) {
+//                alert(errorThrown);
+//            }
+//        });
+    });
+
+  
 });
 
 

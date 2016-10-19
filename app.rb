@@ -4,9 +4,9 @@ require 'sinatra/contrib'
 require "./models"
 require "bundler/setup"
 require "sinatra/flash"
+require "./directory"
 
 enable :sessions
-
 set :database, "sqlite3:userdb.sqlite3"
 
 def current_user
@@ -15,25 +15,17 @@ def current_user
     end
 end
 
-
 before do 
     @mainERB = :postfeed;
     @sideERB = :front;
     @myuserid = "ThebestNameoutthere";
 end
 
-get '/register' do
-    @sideERB = :register;
-    erb :layout;
-end
-
 # POST STUFF
 # SIGNUP
-post '/register' do 
+get '/register' do 
 
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
-    @sideERB = :register
-    erb :layout
 end
 
 # LOGIN
@@ -60,32 +52,4 @@ end
 
 post '/posts' do
     @mainERB = :posts_test
-end
-
-# GET STUFF
-get '/' do
-	erb :layout; #, :layout => :profile
-end
-
-get '/:name' do
-
-    case params[:name]
-    when "home"
-        @sideERB = :error404;
-        
-    when "login"
-        @sideERB = :error404;
-    
-    when "register"
-        @sideERB = :register;
-        
-    when "logout"
-        @sideERB = :error404;
-        
-    else
-        @sideERB = :error404;
-        
-    end
-    
-    erb :layout;
 end
