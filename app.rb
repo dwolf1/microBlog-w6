@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
-require 'json'
 require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
@@ -17,8 +16,7 @@ def current_user
     end
 end
 
-before do
-    @myuserid = User.find(4).fname;
+before do 
 	@users = User.all
 	@posts = Post.all
 end
@@ -32,15 +30,27 @@ end
 
 # LOGIN
 post '/signin' do 
+    @rtnval = false;
     
-    @user = User.where(email: params[:email]).first
-    if @user && @user.password == params[:password]
-        session[:user_id] = @user.id
+    if User.exists?(password: params["password"]) && User.exists?(email: params["email"])
+		# pass and username exit
+		@user = User.find_by(email: params[:email], password: params[:password])
+		session[:id] = @user.id;
         return "good";
-    else
+	else
+		# Could not find username or password
         return nil;
-    end
+	end
     
+	if User.exists?(password: params[:password]) && User.exists?(email: params[:email])
+		# pass and username exit
+		@user = User.find_by(email: params["email"], password: params["password"])
+		session[:id] = @user.id;
+		return "good";
+	else
+		# Could not find username or password
+		return nil;
+	end
 end
 
 get '/posts' do
@@ -50,8 +60,4 @@ end
 
 post '/posts' do
     @mainERB = :posts_test
-end
-
-post '/getuserinfo' do
-    @user.to_json
 end
