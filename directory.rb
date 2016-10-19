@@ -17,6 +17,11 @@ get('/account'){ File.read(File.join('public', 'html/account.html')) }
 
 get('/posts'){ File.read(File.join('public', 'html/posts.html')) }
 
+get('/delete'){ 
+    User.find(session[:id]).destroy
+    File.read(File.join('public', 'html/delete.html')) 
+}
+
 get '/:name' do
     erb :error404
     
