@@ -16,7 +16,6 @@ def current_user
 end
 
 before do 
-    @current_user = "This is the current user";
 	@users = User.all
 	@posts = Post.all
 end
@@ -36,13 +35,11 @@ post '/signin' do
 		# pass and username exit
 		@user = User.find_by(email: params[:email], password: params[:password])
 		session[:id] = @user.id;
-        @current_user = "This is the";
         return "good";
 	else
 		# Could not find username or password
         return nil;
-	end   
-
+	end
 end
 
 get '/posts' do

@@ -45,8 +45,10 @@ $(function(){
         e.preventDefault();        
         $.post("/signin", $("#mainform").serialize(), function(data) {
            if (data) {
+               alert("good");
                changeSideBar("/profile");
            } else {
+               alert("no good");
                $("#badlogin").show();
            }
         });
