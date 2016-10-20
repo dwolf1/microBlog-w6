@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="/css/postfeed.css">
 
 <div id="postfeedContainer">
-    <h1>This is the feed</h1>
-    
-    
-    <p>User ruby or javascript to load in the posts.</p>
-    
-
+    <h2>Your Feed</h2>
+	<div class="container-fluid">
+		<% @posts.each do |post| %>
+	    <div class="row postrow">
+	    		<div class="posting col-sm-12"><%= post.post %></div>
+	    		<div class="username col-sm-6" >userid: <%= post.username %></div>
+            	<div class="timestamp col-sm-6"><%= post.timestamp %></div>
+        </div>
+		<% end %>
+	</div>
 </div>

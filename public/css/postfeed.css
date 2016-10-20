@@ -1,0 +1,18 @@
+.postrow {
+	padding: 2px;
+	margin-bottom: 10px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.posting {
+	margin-bottom: 5px;
+}
+
+.username {
+	text-align: left;
+}
+
+.timestamp {
+	text-align: right;
+}
