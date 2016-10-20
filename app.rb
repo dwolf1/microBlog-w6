@@ -50,6 +50,14 @@ post '/edit' do
     if params["picture"] != nil
     	User.update(session[:id], email: params["picture"]);
     end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+#    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
+end
+
+post '/posts' do
+	@post = Post.create(username: session[:id], post: params["posting"], timestamp: Time.now.to_s(:military))
 end
 
 # LOGIN
