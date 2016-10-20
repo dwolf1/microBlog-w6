@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="/css/login-register.css">
 
-<style>form{color: black};#bio{color:black};input{padding:1em};</style>
-
 <div class="registerContainer col-sm-12">
     <h1>Register</h1>
     
@@ -46,14 +44,10 @@
 <script>
 $(function(){
 //        
-    $("#regibttn").click((e) => {        
-        
+    $("#regibttn").click((e) => {
         e.preventDefault();
         
-        
         $.post("/register", $("#register").serialize(), function(data) {
-//           var a = $.parseJSON(data) 
-            alert("was good "+data);
             changeSideBar("/entrance");
         });
     });
@@ -64,8 +58,6 @@ $(function(){
     });
   
 });
-
-
 
 function submitForm(form){
     var url = form.attr("action");

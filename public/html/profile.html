@@ -11,7 +11,6 @@
             </div>
         </div>
         
-        
         <!-- SIDEBAR USERPIC -->
         <div class="row">
             <div class="col-sm-12">
@@ -21,12 +20,14 @@
             </div>
         </div>
         
+        <br>
         <div class="row">
             <div class="col-sm-12" id="userbio">
-                This is the Bio
+                <p>Riveting Bio detail! </p>
             </div>
         </div>
         
+        <br>
         <!-- SIDEBAR BUTTONS -->
         <div class="row">
             <div class="col-sm-4">
@@ -41,7 +42,8 @@
                 <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
             </div>
         </div>
-                            
+    
+        <br>    
         <div class="row">
             <div class="col-sm-4">
                 <a href="#"><div class="glyphicon glyphicon-home"></div></a>
@@ -60,6 +62,11 @@
 
 <script>
 $(function(){
+    
+    $("#logoutbttn").click((e) => {
+        e.preventDefault();
+        changeSideBar("/logout");
+    });
 
     $("#postbttn").click((e) => {
         e.preventDefault();
@@ -71,9 +78,7 @@ $(function(){
         
         
         $("#profile-usertitle-name").html(a.fname);
-        $("#userbio").html(a.bio);
-        
-        alert("answer os: "+a.fname);
+        $("#userbio").html("<p>"+a.bio+"</p>");
 
     });
   
