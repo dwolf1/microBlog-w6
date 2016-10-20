@@ -49,10 +49,6 @@ post '/edit' do
     	User.update(session[:id], password: params["password"]);
     end
     
-#    if params["dob"] != nil
-#    	User.update(session[:id], email: params["dob"]);
-#    end
-    
     if params.has_key?("picture")
     	User.update(session[:id], picture: params["picture"]);
     end

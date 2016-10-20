@@ -37,7 +37,7 @@ post('/delete_all'){
 
 post('/loggedin'){
     
-    if session[:id] == nil 
+    if session[:id] != nil 
         return "worked";
     else
         return nil;
