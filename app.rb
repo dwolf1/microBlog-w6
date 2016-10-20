@@ -3,20 +3,12 @@ require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
 require 'json'
-#require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
 require "stamp"
-#require "sinatra/base"
 
 enable :sessions
 set :database, "sqlite3:userdb.sqlite3"
-
-def current_user
-    if session[:user_id]
-        @current_user = User.find(session[:user_id])
-    end
-end
 
 before do 
 	@users = User.all
@@ -59,7 +51,7 @@ end params["dob"], lastOn: params["lastOn"], admin: false, picture: params["pict
 end
 
 post('/posts') do
-	@post = Post.create(username: session[:user_id], post: params["posting"], timestamp: Time.now.to_s(:military))
+	@post = Post.create(username: session[:id], post: params["posting"], timestamp: Time.now.to_s(:military))
 end
 
 # LOGIN
@@ -74,15 +66,6 @@ post '/signin' do
 		return nil;
 	end
 end
-
-# get '/posts' do
-#     @mainERB = :posts_test
-#     erb :layout
-# end
-
-# post '/posts' do
-#     @mainERB = :posts_test
-# end
 
 post '/getuserinfo' do
     User.find(session[:id]).to_json
