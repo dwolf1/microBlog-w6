@@ -6,14 +6,14 @@
 
 		<span class="col-sm-5"></span>
 		<input type="" name="search" class="col-sm-3" placeholder="Enter Specific User Id">
-		<button type="submit" class="col-sm-1">Search</button>
-		<button type="submit" class="col col-sm-2">My History</button>
-		<button type="submit" class="col-sm-1">All</button>
+		<button type="submit" id="searchbttn" class="col-sm-1">Search</button>
+		<button type="submit" id="myHistory" class="col col-sm-2">My History</button>
+		<button type="submit" class="col-sm-1" id="allPost">All</button>
 		<span class="col-sm-1"></span>
 	</div>
     <h2>Your Feed</h2>
 	<div class="container-fluid">
-		<% @posts.each do |post| %>
+		<div id="posts"><% @posts.each do |post| %></div>
 	    <div class="row postrow">
 	    		<div class="posting col-sm-12"><%= post.post %></div>
 	    		<div class="username col-sm-6" >userid: <%= post.username %></div>
@@ -24,3 +24,21 @@
 
 	</div>
 </div>
+
+
+<script>
+$(function(){
+	var uIdPost = ("#posts").val();
+	$("#searchbttn").click(function(){
+		uIdPost = form.attr(":search");
+	)};
+	$("#myHistory").click(function(){
+		uIdPost = "<%posts.each do |post| %>";
+	)};
+	$("allPost").click(function(){
+		uIdPost = "<%posts.each do |post| %>";
+	)};
+
+});
+// set variable user which is equal to searchbar
+</script>
