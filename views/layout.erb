@@ -33,7 +33,11 @@
             <button id="ebttn">entrance</button>
             <button id="abttn">account</button>
             <button id="pbttn">profile</button>
-            <button id="tbttn">tables</button>
+            <div>
+                <button id="tbttn">tables</button>
+                <button id="fbttn">feed</button>
+                <button id="dallbttn">delete_all</button>
+            </div>
         </div>
 	
     </body>
@@ -44,7 +48,7 @@ $(function() {
     changeSideBar("/entrance");
     
     $("#ebttn").click(() => {
-        changeSideBar("/entrace");
+        changeSideBar("/entrance");
     });
     
     $("#abttn").click(() => {
@@ -54,10 +58,23 @@ $(function() {
     $("#pbttn").click(() => {
         changeSideBar("/profile");
     });
+    
     $("#tbttn").click(() => {
         window.location.href='/display';
     });
+    $("#fbttn").click(() => {
+        window.location.href='/feed';
+    });
     
+    
+    
+    $("#dallbttn").click((e) => {
+        e.preventDefault();
+        alert("asdad");
+//        changeSideBar("/delete");
+        $.post("/delete_all");
+        alert("someStuff "+e);
+    });
 });
     
     

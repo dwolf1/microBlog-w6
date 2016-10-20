@@ -45,7 +45,8 @@ $(function(){
     $("#deletebttn").click((e) => {
         e.preventDefault();
         if($('#condelete').prop('checked')) {
-            changeSideBar("/delete");
+            $.post("/delete");
+//            changeSideBar("/delete");
         }
     });
     
