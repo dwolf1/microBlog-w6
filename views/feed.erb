@@ -1,6 +1,16 @@
 <link rel="stylesheet" href="/css/postfeed.css">
 
 <div id="postfeedContainer">
+	<br>
+	<div class="row form-group">
+
+		<span class="col-sm-5"></span>
+		<input type="" name="search" class="col-sm-3" placeholder="Enter Specific User Id">
+		<button type="submit" class="col-sm-1">Search</button>
+		<button type="submit" class="col col-sm-2">My History</button>
+		<button type="submit" class="col-sm-1">All</button>
+		<span class="col-sm-1"></span>
+	</div>
     <h2>Your Feed</h2>
 	<div class="container-fluid">
 		<% @posts.each do |post| %>
@@ -9,6 +19,8 @@
 	    		<div class="username col-sm-6" >userid: <%= post.username %></div>
             	<div class="timestamp col-sm-6"><%= post.timestamp %></div>
         </div>
+
 		<% end %>
+
 	</div>
 </div>
