@@ -6,6 +6,7 @@ require 'json'
 #require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
+require "stamp"
 #require "sinatra/base"
 
 enable :sessions
@@ -31,9 +32,35 @@ end
 post '/edit' do
     
 #    User.find(session[:id]).email = "bob@gmail.com"
-    User.update(session[:id], email: "nono@gmail.com");
-    
+	if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["fname"] != nil
+    	User.update(session[:id], email: params["fname"]);
+    end
+    if params["lname"] != nil
+    	User.update(session[:id], email: params["lname"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
 #    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
+end
+
+post('/posts') do
+	@post = Post.create(username: session[:user_id], post: params["posting"], timestamp: Time.now.to_s(:military))
 end
 
 # LOGIN
@@ -49,14 +76,14 @@ post '/signin' do
 	end
 end
 
-get '/posts' do
-    @mainERB = :posts_test
-    erb :layout
-end
+# get '/posts' do
+#     @mainERB = :posts_test
+#     erb :layout
+# end
 
-post '/posts' do
-    @mainERB = :posts_test
-end
+# post '/posts' do
+#     @mainERB = :posts_test
+# end
 
 post '/getuserinfo' do
     User.find(session[:id]).to_json
