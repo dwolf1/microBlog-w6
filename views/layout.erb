@@ -47,7 +47,6 @@
 $(function() {
     
     $.post("/loggedin",(data) => {
-        alert("sssss" + data);
         if(data) 
             changeSideBar("/entrance");
         else 
