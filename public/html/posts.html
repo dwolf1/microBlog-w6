@@ -1,9 +1,9 @@
 <div id="frontContainer">
-    <h1>ANON, Create a Post! </h1>
-	<form>
+    <h1><span id="profile-usertitle-name"></span>, Create a Post! </h1>
+	<form id="posts" action="/posts">
 		<div class="form-group row">
 			<div class="col-sm-12">
-				<textarea class="form-control" placeholder="Create Post Here" id="postID"></textarea>
+				<textarea name="posting" class="form-control" placeholder="Create Post Here" id="postID"></textarea>
 			</div>	
 		</div>
 		<div class="form-group row">
@@ -18,14 +18,31 @@
 <script>
 
 $(function(){
-  
-    $("#postbttn").click((e) => {
-        e.preventDefault();
-        changeSideBar("/posts");
-
-        // SUBMIT POST CODE
+  	$.post("getuserinfo", function(result) {
+        var a = $.parseJSON(result);
+        $("#profile-usertitle-name").html(a.fname);
     });
-  
+
+    $("#postbttn").click((e) => {
+    	e.preventDefault();
+	    $.post("/posts", $("#posts").serialize(), function(data) {
+	        changeSideBar("/profile");
+	    });
+
+    });
+
+    $("#cancelBttn").click((e) => {
+    	e.preventDefault();
+    	changeSideBar("/posts");
+	});
 });
+
+function submitForm(form) {
+    var url = form.attr("action");
+    var formData = $(form).serializeArray();
+    $.post(url, formData).done(function (data) {
+        alert(data);
+    });
+}
 
 </script>
