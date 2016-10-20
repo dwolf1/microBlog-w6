@@ -24,8 +24,30 @@ end
 post '/edit' do
     
 #    User.find(session[:id]).email = "bob@gmail.com"
-    User.update(session[:id], email: "nono@gmail.com");
-    
+	if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["fname"] != nil
+    	User.update(session[:id], email: params["fname"]);
+    end
+    if params["lname"] != nil
+    	User.update(session[:id], email: params["lname"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
+    if params["email"] != nil
+    	User.update(session[:id], email: params["email"]);
+    end
 #    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
