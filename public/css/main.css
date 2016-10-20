@@ -5,7 +5,11 @@
 
 * {
     font-family: reg-font;
-    color: white;
+}
+
+:root {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -15,18 +19,12 @@ body {
 }
 
 #maincontainer {
-/*
-    max-width: 1000px;
-    margin: 0 auto;
-
-    padding: 0 1em;
-*/
-    background-color: rgba(0,0,0,.2);
+    margin: 0;
+/*    background-color: rgba(0,0,0,.2);*/
 }
 
 
 /* HOME */
-
 
 .large-bar {
     overflow: hidden;
@@ -36,6 +34,34 @@ body {
 
 .small-bar {
     overflow: hidden;
-	background: rgba(0,0,0,.7);
+	background: rgba(256,256,256,.9);
     min-height: 100vh;
+    max-width: 500px;
+    float: right;
+}
+
+
+#topsecret {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    body {
+        background-color: #99a;
+    }
+    
+    .small-bar {
+        max-width: 100vw;
+        min-height: auto;
+        float: none;
+    }
+    
 }

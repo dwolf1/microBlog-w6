@@ -10,21 +10,32 @@
             <input class="form-control" type="" name="fname" placeholder="First Name">
         	<input type="" class="form-control" name="lname" placeholder="Last Name">
         </div>
+        
         <div class="form-group row">
-        	<input type="email" class="form-control" name="email" placeholder="Email">
+            <label for="dob">Date of Birth</label>
+             <input type="date" class="form-control" name="dob">
+        </div>
+        
+        <div class="form-group row">
+            <label for="email">Email</label>
+        	<input type="email" class="form-control" name="email" placeholder="Enter Email">
         	
-        	<input type="" class="form-control" name="password" placeholder="Enter Password">
         	<!-- this might become a confirm password if we've got extra time
             <input type="" name="passworg" placeholder="Re-Enter Password"> -->
         	<!-- probably want selectors for dob -->
-           
         </div>
+        
         <div class="form-group row">
-             <input type="date" class="form-control" name="dob">
+            <label for"password">Password</label>
+            <input type="" class="form-control" name="password" placeholder="Enter Password">
+            <input type="" class="form-control" name="confirmpassword" placeholder="Confirm Password">
         </div>
+        
         <div class="form-group row">
+            <label for="bio">Description</label>
              <TEXTAREA class="form-control" id="bio" color="black" type="" name="bio" placeholder="Tell us about yourself" rows="6" cols="30"></TEXTAREA>
     	</div>
+        
         <div class="form-group row">
     	   <button type="submit" id="regibttn"  class="offset-sm-2 btn btn-primary">Register</button>
            <button type="submit" id="cancelBttn"  class="offset-sm-2 btn btn-danger">Cancel</button>
@@ -45,12 +56,10 @@ $(function(){
             alert("was good "+data);
             changeSideBar("/entrance");
         });
-        
-//        c
     });
+    
     $("#cancelBttn").click((e) => {
         e.preventDefault();
-        alert("was bad");
         changeSideBar("/entrance");
     });
   
