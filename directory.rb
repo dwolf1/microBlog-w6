@@ -8,7 +8,7 @@ get '/display' do
 end
 
 get '/feed' do
-    erb :postfeed; #, :layout => :profile
+    erb :feed; #, :layout => :profile
 end
 
 get('/entrance'){ File.read(File.join('public', 'html/entrance.html')) }
@@ -20,6 +20,11 @@ get('/profile'){ File.read(File.join('public', 'html/profile.html')) }
 get('/account'){ File.read(File.join('public', 'html/account.html')) }
 
 get('/posts'){ File.read(File.join('public', 'html/posts.html')) }
+
+get('/logout'){
+    session.clear
+    erb :feed
+}
 
 post('/delete'){ 
     User.find(session[:id]).destroy

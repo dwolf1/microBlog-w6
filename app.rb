@@ -25,7 +25,6 @@ end
 # POST STUFF
 # SIGNUP
 post '/register' do 
-
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
@@ -35,7 +34,6 @@ end
 
 # LOGIN
 post '/signin' do
-    
 	if User.exists?(password: params[:password]) && User.exists?(email: params[:email])
 		# pass and username exit
 		@user = User.find_by(email: params["email"], password: params["password"])

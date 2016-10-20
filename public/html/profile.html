@@ -1,70 +1,68 @@
 <link rel="stylesheet" href="/css/profile-account.css">
 
 <div id="profileContainer">    
-                <!-- USER INFO -->
-        <div class="form-group row">
-            <div class="col-sm-12">
-                <h2>
-                    <span id="profile-usertitle-name">Marcus Doe</span>
-                    <small id="profile-usertitle-job">Developer</small>
-                </h2>
-            </div>
+            <!-- USER INFO -->
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <h2>
+                <span id="profile-usertitle-name">Marcus Doe</span>
+                <small id="profile-usertitle-job">Developer</small>
+            </h2>
         </div>
-        
-        <!-- SIDEBAR USERPIC -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="profile-userpic">
-                    <img src="./image/user_default.png" id="userimage" class="img-responsive" alt="user image">
-                </div>
-            </div>
-        </div>
-        
-        <br>
-        <div class="row">
-            <div class="col-sm-12" id="userbio">
-                <p>Riveting Bio detail! </p>
-            </div>
-        </div>
-        
-        <br>
-        <!-- SIDEBAR BUTTONS -->
-        <div class="row">
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-success btn-sm edit" id="editbttn">Edit</button>
-            </div>
+    </div>
 
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-primary btn-sm logout" id="logoutbttn">Logout</button>
-            </div>
-
-            <div class="col-sm-4">
-                <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
-            </div>
-        </div>
-    
-        <br>    
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="#"><div class="glyphicon glyphicon-home"></div></a>
-            </div>
-
-            <div class="col-sm-4">
-                <a href="#"><div class="glyphicon glyphicon-user"></div></a>
-            </div>
-
-            <div class="col-sm-4">
-                <a href="#" id="postbttn"><div class="glyphicon glyphicon-eye-open"></div></a>
+    <!-- SIDEBAR USERPIC -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="profile-userpic">
+                <img src="./image/user_default.png" id="userimage" class="img-responsive" alt="user image">
             </div>
         </div>
-        
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-12" id="userbio">
+            <p>Riveting Bio detail! </p>
+        </div>
+    </div>
+
+    <br>
+    <!-- SIDEBAR BUTTONS -->
+    <div class="row">
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-success btn-sm edit" id="editbttn">Edit</button>
+        </div>
+
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-primary btn-sm logout" id="logoutbttn">Logout</button>
+        </div>
+
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-danger btn-sm delete" id="deletebttn">Delete</button>
+        </div>
+    </div>
+
+    <br>    
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="#"><div class="glyphicon glyphicon-home"></div></a>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="#"><div class="glyphicon glyphicon-user"></div></a>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="#" id="postbttn"><div class="glyphicon glyphicon-eye-open"></div></a>
+        </div>
+    </div>  
 </div>
 
 <script>
 $(function(){
     
     $("#logoutbttn").click((e) => {
-        e.preventDefault();
         changeSideBar("/logout");
     });
 
