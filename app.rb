@@ -30,7 +30,8 @@ end
 
 post '/edit' do
     
-    User.find(session[:id]).email = "bob@gmail.com"
+#    User.find(session[:id]).email = "bob@gmail.com"
+    User.update(session[:id], email: "nono@gmail.com");
     
 #    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
