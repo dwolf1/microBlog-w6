@@ -3,11 +3,9 @@ require "sinatra/activerecord"
 require 'sinatra/contrib'
 require "./models"
 require 'json'
-#require "bundler/setup"
 require "sinatra/flash"
 require "./directory"
 require "stamp"
-#require "sinatra/base"
 
 enable :sessions
 set :database, "sqlite3:userdb.sqlite3"
