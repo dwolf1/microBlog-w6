@@ -45,7 +45,14 @@
 
 <script>
 $(function() {
-    changeSideBar("/entrance");
+    
+    $.post("/loggedin",(data) => {
+        alert("sssss" + data);
+        if(data) 
+            changeSideBar("/entrance");
+        else 
+            changeSideBar("/profile");
+    });
     
     $("#ebttn").click(() => {
         changeSideBar("/entrance");

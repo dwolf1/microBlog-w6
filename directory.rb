@@ -35,6 +35,15 @@ post('/delete_all'){
     User.delete_all()
 }
 
+post('/loggedin'){
+    
+    if session[:id] == nil 
+        return "worked";
+    else
+        return nil;
+    end
+}
+
 
 #get '/:name' do
 #    erb :error404
