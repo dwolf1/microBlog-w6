@@ -1,15 +1,17 @@
+<link rel="stylesheet" href="/css/login-register.css">
+
 <div id="frontContainer">
-    <h1><span id="profile-usertitle-name"></span>, Create a Post! </h1>
+    <h1><span id="profile-usertitle-name"></span>, create a post! </h1><hr>
 	<form id="posts" action="/posts">
 		<div class="form-group row">
 			<div class="col-sm-12">
-				<textarea name="posting" class="form-control" placeholder="Create Post Here" id="postID"></textarea>
+				<textarea name="posting" class="form-control" placeholder="Create Post" id="postID"></textarea>
 			</div>	
 		</div>
 		<div class="form-group row">
 			<div class="col-sm-12">
-				<button type="submit" class="btn btn-primary" id="postbttn">Post</button>
-			</div>
+				<button type="submit" id="postbttn" class="offset-sm-2 btn btn-primary">Post</button>
+				<button type="submit" id="cancelBttn"  class="offset-sm-2 btn btn-danger">Cancel</button>
 		</div>
 	</form>
 </div>

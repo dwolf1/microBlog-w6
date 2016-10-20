@@ -73,15 +73,6 @@ post '/signin' do
 	end
 end
 
-get '/posts' do
-    @mainERB = :posts_test
-    erb :layout
-end
-
-post '/posts' do
-    @mainERB = :posts_test
-end
-
 post '/getuserinfo' do
     User.find(session[:id]).to_json
 end
