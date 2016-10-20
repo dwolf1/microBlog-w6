@@ -29,12 +29,9 @@ post '/register' do
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
+
 post '/edit' do
-    
-#    User.find(session[:id]).email = "bob@gmail.com"
-post '/edit' do
-    
-#    User.find(session[:id]).email = "bob@gmail.com"
+
 	if params["email"] != nil
     	User.update(session[:id], email: params["email"]);
     end
@@ -58,7 +55,6 @@ post '/edit' do
     end
    
 
-#    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 post('/posts') do
