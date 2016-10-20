@@ -14,7 +14,8 @@
         
         <div class="form-group">
             <label for="userEmail">Email address</label>
-            <input type="email" class="form-control" id="userEmail" name="email" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="email" class="form-control" id="userEmail" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         
         <div class="form-group">
@@ -73,13 +74,22 @@ $(function(){
         changeSideBar("/profile");
     });
   
-    $("form").submit(() => {
-        alert("asdasd");
-        changeSideBar("/profile");
+    $("form").submit((e) => {
+        e.preventDefault();
         
-        $.post("/edit");
+        $.post("/edit", $("form").serialize(), () => {
+            changeSideBar("/profile");
+        });
         
-    });            
+    });
+    
+//    $("#regibttn").click((e) => {
+//        e.preventDefault();
+//        
+//        $.post("/register", $("#register").serialize(), function(data) {
+//            changeSideBar("/entrance");
+//        });
+//    });
 });
 
 </script>

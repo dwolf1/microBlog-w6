@@ -28,32 +28,35 @@ end
 
 
 post '/edit' do
+    
+	if params.has_key?("email")
+    	User.update(session[:id], email: params[:email]);
+    end
+    
+    if params.has_key?("fname")
+    	User.update(session[:id], fname: params["fname"]);
+    end
+    
+    if params.has_key?("lname")
+    	User.update(session[:id], lname: params["lname"]);
+    end
+    
+    if params.has_key?("bio")
+    	User.update(session[:id], bio: params["bio"]);
+    end
+    
+    if params.has_key?("password")
+    	User.update(session[:id], password: params["password"]);
+    end
+    
+#    if params["dob"] != nil
+#    	User.update(session[:id], email: params["dob"]);
+#    end
+    
+    if params.has_key?("picture")
+    	User.update(session[:id], picture: params["picture"]);
+    end
 
-	if params["email"] != nil
-    	User.update(session[:id], email: params["email"]);
-    end
-    if params["fname"] != nil
-    	User.update(session[:id], email: params["fname"]);
-    end
-    if params["lname"] != nil
-    	User.update(session[:id], email: params["lname"]);
-    end
-    if params["bio"] != nil
-    	User.update(session[:id], email: params["bio"]);
-    end
-    if params["password"] != nil
-    	User.update(session[:id], email: params["password"]);
-    end
-    if params["dob"] != nil
-    	User.update(session[:id], email: params["dob"]);
-    end
-    if params["picture"] != nil
-    	User.update(session[:id], email: params["picture"]);
-    end
-    if params["email"] != nil
-    	User.update(session[:id], email: params["email"]);
-    end
-#    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 post '/posts' do
