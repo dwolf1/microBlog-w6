@@ -1,54 +1,50 @@
 <link rel="stylesheet" href="/css/profile-account.css">
 
 <div id="profileContainer">    
-                <!-- USER INFO -->
-        <div class="form-group row">
-            <div class="col-sm-12">
-                <h2>
-                    <span id="profile-usertitle-name">Marcus Doe</span>
-                    <small id="profile-usertitle-job">Developer</small>
-                </h2>
+            <!-- USER INFO -->
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <h2>
+                <span id="profile-usertitle-name">Marcus Doe</span>
+                <small id="profile-usertitle-job">Developer</small>
+            </h2>
+        </div>
+    </div>
+
+    <!-- SIDEBAR USERPIC -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="profile-userpic">
+                <img src="./image/user_default.png" id="userimage" class="img-responsive" alt="user image">
             </div>
         </div>
-        
-        <!-- SIDEBAR USERPIC -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="profile-userpic">
-                    <img src="./image/user_default.png" id="userimage" class="img-responsive" alt="user image">
-                </div>
-            </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-12" id="userbio">
+            <p>Riveting Bio detail! </p>
         </div>
-        
-        <br>
-        <div class="row">
-            <div class="col-sm-12" id="userbio">
-                <p>Riveting Bio detail! </p>
-            </div>
-        </div>
-        
-        <br>
+    </div>
     
-        <br>    
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="#" id="postbttn"><div class="glyphicon glyphicon-pencil"></div></a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#"><div class="glyphicon glyphicon-cog"></div></a>
-            </div>
-            <div class="col-sm-4">
-                <a href="#" id="logoutbttn"><div class="glyphicon glyphicon-log-out"></div></a>
-            </div>
+    <br>    
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="#" id="postbttn"><div class="glyphicon glyphicon-pencil"></div></a>
         </div>
-        
+        <div class="col-sm-4">
+            <a href="#"><div class="glyphicon glyphicon-cog"></div></a>
+        </div>
+        <div class="col-sm-4">
+            <a href="#" id="logoutbttn"><div class="glyphicon glyphicon-log-out"></div></a>
+        </div>
+    </div>
 </div>
 
 <script>
 $(function(){
     
     $("#logoutbttn").click((e) => {
-        e.preventDefault();
         changeSideBar("/logout");
     });
 

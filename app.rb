@@ -26,12 +26,15 @@ end
 # POST STUFF
 # SIGNUP
 post '/register' do 
-
     @user = User.create(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 post '/edit' do
-    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
+    
+#    User.find(session[:id]).email = "bob@gmail.com"
+    User.update(session[:id], email: "nono@gmail.com");
+    
+#    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 post('/posts') do
@@ -40,7 +43,6 @@ end
 
 # LOGIN
 post '/signin' do
-    
 	if User.exists?(password: params[:password]) && User.exists?(email: params[:email])
 		# pass and username exit
 		@user = User.find_by(email: params["email"], password: params["password"])
