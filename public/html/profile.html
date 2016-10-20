@@ -33,7 +33,7 @@
             <a href="#" id="postbttn"><div class="glyphicon glyphicon-pencil"></div></a>
         </div>
         <div class="col-sm-4">
-            <a href="#"><div class="glyphicon glyphicon-cog"></div></a>
+            <a href="#" id="accountbttn"><div class="glyphicon glyphicon-cog"></div></a>
         </div>
         <div class="col-sm-4">
             <a href="#" id="logoutbttn"><div class="glyphicon glyphicon-log-out"></div></a>
@@ -48,6 +48,10 @@ $(function(){
         changeSideBar("/logout");
     });
 
+    $("#accountbttn").click((e) => {
+        changeSideBar("/account");
+    });
+
     $("#postbttn").click((e) => {
         e.preventDefault();
         changeSideBar("/posts");
@@ -58,7 +62,7 @@ $(function(){
         
         
         $("#profile-usertitle-fname").html(a.fname);
-        $("#profile-usertitle-fname").html(a.lname);
+        $("#profile-usertitle-lname").html(a.lname);
         $("#userbio").html("<p>"+a.bio+"</p>");
 
     });
