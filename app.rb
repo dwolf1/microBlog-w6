@@ -29,7 +29,10 @@ post '/register' do
 end
 
 post '/edit' do
-    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
+    
+    User.find(session[:id]).email = "bob@gmail.com"
+    
+#    @user = User.save(fname: params["fname"], lname: params["lname"], email: params["email"], bio: params["bio"], password: params["password"], dob: params["dob"], lastOn: params["lastOn"], admin: false, picture: params["picture"]);
 end
 
 # LOGIN
