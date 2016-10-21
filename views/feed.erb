@@ -37,11 +37,20 @@ $(function(){
 	$("#myHistory").click(function(){
 		uIdPost = "<%posts.each do |post| %>";
 	)};
-                          
+
 	$("allPost").click(function(){
 		uIdPost = "<%posts.each do |post| %>";
 	)};
 
 });
+
+<% @account_names.each_with_index do |name, index| %>                    
+    <tr>
+      <td><%= name %><td>
+      <td><%= @combined_conversions[index] %></td>
+      <td><%= @combined_spend[index] %></td>
+    </tr>
+  <% end %>
 // set variable user which is equal to searchbar
+
 </script>
