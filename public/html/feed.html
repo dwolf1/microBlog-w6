@@ -18,47 +18,14 @@
 </div>
 
 <script>
-<<<<<<< HEAD
-// $(function() {
-    function passVal() {
-        clearSearch();
-        srch = $("#srch").val();
-        console.log(srch);
-            $.post("/getposts", function(result) {
-                var a = $.parseJSON(result);
 
-                if (srch=="") {
-                    for(var i = 0; i < a.length; i++ ) {
-                        createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);
-                    }
-                    return;
-                }
-
-                for(var i = 0; i < a.length; i++ ) {
-                    if (a[i].username==srch) {
-                        createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);
-                    }
-        //            $.post("/getuserinfo", a[i].username, function(res) {
-        //            });
-                }
-            }); 
-    }
-
-//    var username = "sarah";
-//    var profilepic = "default_01.png";
-//    var post = "This is my awesome post data";
-//    var pdate = "00/00/00";
-//    
-//    createPost(username, profilepic, post, pdate);
-    
-// });
-function clearSearch() {
-    $("#posts").html("");
-}
-
-=======
 $(function() {
+    allPosts();
     
+    
+});
+    
+function allPosts() {
     $.post("/getposts", function(result) {
         var a = $.parseJSON(result);
         
@@ -72,10 +39,8 @@ $(function() {
             })(i);
         }
     });
+}
     
-});
-    
->>>>>>> origin/master
 function createPost(uname, ppic, ptext, pdate) {
     $("#posts").append(
         "<div class=\'media\'>"+
@@ -90,6 +55,45 @@ function createPost(uname, ppic, ptext, pdate) {
             "</div>"+
         "</div>"    
     );
-}    
+}
+    
+function clearSearch() {
+    $("#posts").html("");
+}
+    
+function passVal() {
+    clearSearch();
+    srch = $("#srch").val();
+    console.log(srch);
+    
+    $.post("/getposts", function(result) {
+        var a = $.parseJSON(result);
+
+        if (srch=="") {
+            for(var i = 0; i < a.length; i++ ) {
+            (function(i) {
+                var formData = {id:a[i].username};
+                $.post("/finduser", formData, (res) => {
+                    var bval = $.parseJSON(res);
+                    createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                });
+            })(i);
+            }
+            return;
+        }
+
+        for(var i = 0; i < a.length; i++ ) {
+            if (a[i].username==srch) {
+                (function(i) {
+                    var formData = {id:a[i].username};
+                    $.post("/finduser", formData, (res) => {
+                        var bval = $.parseJSON(res);
+                        createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                    });
+                })(i);
+            }
+        }
+    }); 
+}
 
 </script>
