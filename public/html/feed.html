@@ -18,6 +18,7 @@
 </div>
 
 <script>
+<<<<<<< HEAD
 // $(function() {
     function passVal() {
         clearSearch();
@@ -55,6 +56,26 @@ function clearSearch() {
     $("#posts").html("");
 }
 
+=======
+$(function() {
+    
+    $.post("/getposts", function(result) {
+        var a = $.parseJSON(result);
+        
+        for(var i = 0; i < a.length; i++ ) {
+            (function(i) {
+                var formData = {id:a[i].username};
+                $.post("/finduser", formData, (res) => {
+                    var bval = $.parseJSON(res);
+                    createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                });
+            })(i);
+        }
+    });
+    
+});
+    
+>>>>>>> origin/master
 function createPost(uname, ppic, ptext, pdate) {
     $("#posts").append(
         "<div class=\'media\'>"+
