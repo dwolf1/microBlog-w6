@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/sidebar.css">
 
 <div class="registerContainer col-sm-12">
+     <a href="#" id="backbttn" class="glyphicon glyphicon-remove"></a>
     <h1>Register</h1>
     
     <form id="register" action="/register">
@@ -32,7 +33,7 @@
         
         <div class="form-group row">
     	   <button type="submit" id="regibttn"  class="offset-sm-2 btn btn-primary">Register</button>
-           <button type="submit" id="cancelBttn"  class="offset-sm-2 btn btn-danger">Cancel</button>
+           
         </div>
     </form>
 </div>
@@ -48,9 +49,9 @@ $(function(){
         });
     });
     
-    $("#cancelBttn").click((e) => {
-        e.preventDefault();
+     $("#backbttn").click(() => {
         changeSideBar("/entrance");
+    
     });
   
 });

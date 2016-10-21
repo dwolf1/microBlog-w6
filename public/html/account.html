@@ -7,7 +7,7 @@
     <form>
         <div class="form-group">
             <label for="firstname">Personal</label>
-            <input type="text" class="form-control" id="firstname" name="fname" aria-describedby="nameHelp" placeholder="Enter fist name">            
+            <input type="text" class="form-control" id="firstname" name="fname" aria-describedby="nameHelp" placeholder="Enter first name">            
             <input type="text" class="form-control" id="lastname" name="lname" aria-describedby="nameHelp" placeholder="Enter last name">
             <small id="nameHelp" class="form-text text-muted">Other users will see this.</small>
         </div>
@@ -78,9 +78,9 @@ $(function(){
         e.preventDefault();
         
         $.post("/edit", $("form").serialize(), () => {
-            changeSideBar("/profile");
+            
         });
-        
+        changeSideBar("/profile");
     });
 
 });

@@ -22,29 +22,29 @@ end
 
 post '/edit' do
     
-	if params.has_key?("email")
+	if params[:email].present?
     	User.update(session[:id], email: params[:email]);
     end
     
-    if params.has_key?("fname")
+    if params[:fname].present?
     	User.update(session[:id], fname: params["fname"]);
     end
     
-    if params.has_key?("lname")
+    if params[:lname].present?
     	User.update(session[:id], lname: params["lname"]);
     end
     
-    if params.has_key?("bio")
+    if params[:bio].present?
     	User.update(session[:id], bio: params["bio"]);
     end
     
-    if params.has_key?("password")
+    if params[:password].present?
     	User.update(session[:id], password: params["password"]);
     end
     
-    if params.has_key?("picture")
-    	User.update(session[:id], picture: params["picture"]);
-    end
+    # if params.has_key?("picture")
+    # 	User.update(session[:id], picture: params["picture"]);
+    # end
 
 end
 
