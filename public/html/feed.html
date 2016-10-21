@@ -9,31 +9,38 @@
             <a href="#" id="accountbttn"><div class="glyphicon glyphicon-cog"></div></a>
         </div>
         <div class="col-xs-4">
-            <a href="#" id="searchbttn" onclick="passVal()"><div class="glyphicon glyphicon-search"></div></a>
             <input id="srch" name="srch" placeholder="search id">
+            <a href="#" id="searchbttn" onclick="passVal()"><div class="glyphicon glyphicon-search"></div></a>
         </div>
-    </div>    
-    
+    </div><br>    
+    <div id="posts"></div>
 
 </div>
 
 <script>
 // $(function() {
     function passVal() {
+        clearSearch();
         srch = $("#srch").val();
         console.log(srch);
-        $.post("/getposts", function(result) {
-            var a = $.parseJSON(result);
+            $.post("/getposts", function(result) {
+                var a = $.parseJSON(result);
 
-            for(var i = 0; i < a.length; i++ ) {
-                if (a[i].username==srch) {
-                    createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);
+                if (srch=="") {
+                    for(var i = 0; i < a.length; i++ ) {
+                        createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);
+                    }
+                    return;
                 }
-    //            $.post("/getuserinfo", a[i].username, function(res) {
 
-    //            });
-            }
-        });
+                for(var i = 0; i < a.length; i++ ) {
+                    if (a[i].username==srch) {
+                        createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);
+                    }
+        //            $.post("/getuserinfo", a[i].username, function(res) {
+        //            });
+                }
+            }); 
     }
 
 //    var username = "sarah";
@@ -44,9 +51,12 @@
 //    createPost(username, profilepic, post, pdate);
     
 // });
-    
+function clearSearch() {
+    $("#posts").html("");
+}
+
 function createPost(uname, ppic, ptext, pdate) {
-    $("#feedContainer").append(
+    $("#posts").append(
         "<div class=\'media\'>"+
             "<div class=\"media-left\">"+
             "<img src=\'image/"+ppic+"\' class=\'media-object\' style=\'width:60px\'>"+
