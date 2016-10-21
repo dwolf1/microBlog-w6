@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/postfeed.css">
+
+<div id="feedContainer">
+    <div class="row" id="feednav">
+        <div class="col-xs-4">
+            <a href="#" id="latestbttn"><div class="glyphicon glyphicon-pencil"></div></a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" id="accountbttn"><div class="glyphicon glyphicon-cog"></div></a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" id="searchbttn"><div class="glyphicon glyphicon-search"></div></a>
+        </div>
+    </div>    
+    
+
+</div>
+
+<script>
+$(function() {
+    
+    $.post("/getposts", function(result) {
+        var a = $.parseJSON(result);
+        
+        for(var i = 0; i < a.length; i++ ) {
+            
+//            $.post("/getuserinfo", a[i].username, function(res) {
+                createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);       
+//            });
+            
+        }
+    });
+    
+    
+//    var username = "sarah";
+//    var profilepic = "default_01.png";
+//    var post = "This is my awesome post data";
+//    var pdate = "00/00/00";
+//    
+//    createPost(username, profilepic, post, pdate);
+    
+});
+    
+function createPost(uname, ppic, ptext, pdate) {
+    $("#feedContainer").append(
+        "<div class=\'media\'>"+
+            "<div class=\"media-left\">"+
+            "<img src=\'image/"+ppic+"\' class=\'media-object\' style=\'width:60px\'>"+
+            "</div>"+
+
+            "<div class=\"media-body\">"+
+                "<h4 class=\"media-heading\">"+uname+"<small id=\'timestamp\'> Posted on: "+pdate+"</small></h4>"+
+                "<hr>"+
+                "<p>"+ptext+"</p>"+
+            "</div>"+
+        "</div>"    
+    );
+}    
+
+</script>

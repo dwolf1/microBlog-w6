@@ -39,3 +39,41 @@
     width: auto;
     text-decoration: none;
 }
+
+
+#frontContainer {
+    
+}
+
+#registerContainer {
+    
+}
+
+#loginContainer {
+    
+}
+
+#badlogin {
+    display: none;
+    color: black;
+/*    padding: 1em;*/
+    background-color: white;
+    font-weight: bold;
+    border-radius: 7.5px;
+}
+
+#signinbttn {
+    width: 100%;
+}
+
+#registerbttn {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}

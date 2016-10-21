@@ -5,6 +5,7 @@
 
 * {
     font-family: reg-font;
+    transition: .25s;
 }
 
 :root {
@@ -13,7 +14,8 @@
 }
 
 body {
-    background-color: #bcf;
+/*    background-color: #bcf;*/
+    background-color: #222;
     padding: 0;
     margin: 0;
 }
@@ -29,7 +31,11 @@ body {
 .large-bar {
     overflow: hidden;
 	min-height: 500px;
-	background-color: rgba(0,0,0,.1);
+    max-width: 900px;
+    color: white;
+    background-color: rgba(0,0,0,.9);
+    min-height: 100vh;
+    float: right;
 }
 
 .small-bar {

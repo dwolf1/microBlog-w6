@@ -1,24 +1,40 @@
-<link rel="stylesheet" href="/css/login-register.css">
+<link rel="stylesheet" href="/css/sidebar.css">
 
 <div id="frontContainer">
-    <h1><span id="profile-usertitle-name"></span>, create a post! </h1><hr>
+    <div class="row">
+    <a href="#" id="backbttn" class="glyphicon glyphicon-remove"></a>
+    </div>
+    
+    <div class="row center">
+        <h1><span id="profile-usertitle-name"></span></h1>
+        <hr>
+        <h1><small>Create a post</small></h1>
+    </div>
+    
+    
+    <br>
 	<form id="posts" action="/posts">
 		<div class="form-group row">
 			<div class="col-sm-12">
-				<textarea name="posting" class="form-control" placeholder="Create Post" id="postID"></textarea>
+				<textarea name="posting" class="form-control" rows="5" placeholder="Create Post" id="postID"></textarea>
 			</div>	
+            
+            <div class="row right">
+                
+                <div class="col-sm-12">char:<span id="charcount">150</span></div>
+            </div>
 		</div>
+        
 		<div class="form-group row">
 			<div class="col-sm-12">
 				<button type="submit" id="postbttn" class="offset-sm-2 btn btn-primary">Post</button>
-				<button type="submit" id="cancelBttn"  class="offset-sm-2 btn btn-danger">Cancel</button>
+            </div>
 		</div>
 	</form>
+        
 </div>
 
-
 <script>
-
 $(function(){
   	$.post("getuserinfo", function(result) {
         var a = $.parseJSON(result);
@@ -33,18 +49,20 @@ $(function(){
 
     });
 
-    $("#cancelBttn").click((e) => {
-    	e.preventDefault();
-    	changeSideBar("/posts");
-	});
-});
-
-function submitForm(form) {
-    var url = form.attr("action");
-    var formData = $(form).serializeArray();
-    $.post(url, formData).done(function (data) {
-        alert(data);
+    $("#backbttn").click(() => {
+        changeSideBar("/profile");
     });
-}
-
+    
+    $("#postID").keyup(() => {
+        var cal = 150 - $("#postID").val().length;
+        
+        if(cal < 0) {
+            var cutstring = $("#postID").val().slice(0,150);;
+            $("#postID").val(cutstring);
+            cal = 0;
+        }
+        
+        $("#charcount").html(cal);
+    });
+});
 </script>

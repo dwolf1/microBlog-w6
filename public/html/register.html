@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/login-register.css">
+<link rel="stylesheet" href="/css/sidebar.css">
 
 <div class="registerContainer col-sm-12">
     <h1>Register</h1>
@@ -39,7 +39,7 @@
 
 <script>
 $(function(){
-//        
+    
     $("#regibttn").click((e) => {
         e.preventDefault();
         
@@ -54,13 +54,4 @@ $(function(){
     });
   
 });
-
-function submitForm(form){
-    var url = form.attr("action");
-    var formData = $(form).serializeArray();
-    $.post(url, formData).done(function (data) {
-        alert(data);
-    });
-}
-
 </script>

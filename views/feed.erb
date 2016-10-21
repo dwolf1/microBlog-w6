@@ -29,12 +29,15 @@
 <script>
 $(function(){
 	var uIdPost = ("#posts").val();
+    
 	$("#searchbttn").click(function(){
 		uIdPost = form.attr(":search");
 	)};
+                           
 	$("#myHistory").click(function(){
 		uIdPost = "<%posts.each do |post| %>";
 	)};
+                          
 	$("allPost").click(function(){
 		uIdPost = "<%posts.each do |post| %>";
 	)};
