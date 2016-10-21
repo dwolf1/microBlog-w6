@@ -48,7 +48,7 @@ body {
 #topsecret {
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
 }
 
 /* Large Devices, Wide Screens */
