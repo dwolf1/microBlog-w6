@@ -23,21 +23,15 @@ $(function() {
         var a = $.parseJSON(result);
         
         for(var i = 0; i < a.length; i++ ) {
-            
-//            $.post("/getuserinfo", a[i].username, function(res) {
-                createPost(a[i].username, "default_01.png", a[i].post, a[i].timestamp);       
-//            });
-            
+            (function(i) {
+                var formData = {id:a[i].username};
+                $.post("/finduser", formData, (res) => {
+                    var bval = $.parseJSON(res);
+                    createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                });
+            })(i);
         }
     });
-    
-    
-//    var username = "sarah";
-//    var profilepic = "default_01.png";
-//    var post = "This is my awesome post data";
-//    var pdate = "00/00/00";
-//    
-//    createPost(username, profilepic, post, pdate);
     
 });
     

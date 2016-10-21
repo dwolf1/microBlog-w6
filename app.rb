@@ -69,6 +69,12 @@ post '/getuserinfo' do
     User.find(session[:id]).to_json
 end
 
+post '/finduser' do
+    User.find(params[:id]).to_json
+end
+
 post '/getposts' do
    Post.all.to_json
 end
+
+
