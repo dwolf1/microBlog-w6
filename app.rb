@@ -42,9 +42,9 @@ post '/edit' do
     	User.update(session[:id], password: params["password"]);
     end
     
-    # if params.has_key?("picture")
-    # 	User.update(session[:id], picture: params["picture"]);
-    # end
+    if params[:picture].present?
+     	User.update(session[:id], picture: "default_02.png");
+    end
 
 end
 
@@ -75,6 +75,13 @@ end
 
 post '/getposts' do
    Post.all.to_json
+end
+
+post "/uploadimg" do 
+  tempfile = params['file'][:tempfile]
+  filename = params['file'][:filename]
+  File.copy(tempfile.path, "./files/#{filename}")
+  redirect '/'
 end
 
 
