@@ -21,8 +21,11 @@
 
 
 #userbio {
-    background-color: rgba(0,0,0,.1);
-    min-height: 100px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    padding: 1em;
+    min-height: 75px;
 }
 
 #userimage {

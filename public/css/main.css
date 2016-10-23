@@ -81,7 +81,7 @@ hr {
     margin: auto 0;
     text-align: center;
     background-color: #fff5;
-    box-shadow: 3px 3px #999;
+    box-shadow: 3px 3px #999, -2px -2px #eee;
     border-radius: 1em;
     float: left;
     position: relative;
