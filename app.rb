@@ -21,7 +21,6 @@ post '/register' do
 end
 
 post '/edit' do
-    
 	if params[:email].present?
     	User.update(session[:id], email: params[:email]);
     end
@@ -43,9 +42,12 @@ post '/edit' do
     end
     
     if params[:picture].present?
-     	User.update(session[:id], picture: "default_02.png");
+        if params["picture"] != -1             
+            pic = "default_0"+params["picture"]+".png";
+            User.update(session[:id], picture: pic);
+        end
     end
-
+    
 end
 
 post '/posts' do

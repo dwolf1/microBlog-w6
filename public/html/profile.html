@@ -63,6 +63,7 @@ $(function(){
         
         $("#profile-usertitle-fname").html(a.fname);
         $("#profile-usertitle-lname").html(a.lname);
+        $("#userimage").attr("src", "../image/"+a.picture);
         $("#userbio").html("<p>"+a.bio+"</p>");
 
     });

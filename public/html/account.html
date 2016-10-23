@@ -4,6 +4,7 @@
     <a href="#" id="backbttn" class="glyphicon glyphicon-remove"></a>
     
     <h2>Account</h2>
+    <hr>
     <form enctype="multipart/form-data">
         <div class="form-group">
             <label for="firstname">Personal</label>
@@ -28,9 +29,18 @@
             <textarea class="form-control" id="userBIO" name="bio" rows="3"></textarea>
         </div>
         
+<!--
         <div class="form-group">
             <label for="exampleInputFile">Profile Image</label>
             <input type="file" class="form-control-file" id="exampleInputFile" name="picture" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Slected photo can be no larger then 1024px.</small>
+        </div>
+-->
+        
+        <div class="form-group" style="width:100%;">
+            <label for="exampleInputFile">Profile Image</label>
+            <input id="imgslider" type="range" min="1" max="9" value="-1" name="picture">
+            <img id="avatarprev" src="../image/default_01.png" style="width:50%; display:block; margin:0 auto;">
+            
         </div>
         
         <div class="form-group">
@@ -53,6 +63,11 @@
 
 <script>
 $(function(){
+    
+    $("#imgslider").click( () => {
+        var rng = $("#imgslider").val();
+        $("#avatarprev").attr("src", "../image/default_0"+rng+".png");
+    })
   
     $("#deletebttn").click((e) => {
         e.preventDefault();
@@ -77,8 +92,7 @@ $(function(){
     $("form").submit((e) => {
         e.preventDefault();
         
-        $.post("/edit", $("form").serialize(), () => {
-            
+       $.post("/edit", $("form").serialize(), function(data) {
         });
         changeSideBar("/profile");
     });

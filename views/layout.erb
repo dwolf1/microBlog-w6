@@ -28,6 +28,7 @@
             </div>
         </div>
         
+<!--
         <div id="topsecret">
             <button id="ebttn">entrance</button>
             <button id="abttn">account</button>
@@ -38,6 +39,7 @@
                 <button id="dallbttn">delete_all</button>
             </div>
         </div>
+-->
         
         <div class="footer navbar-fixed-bottom">&copy; 2016 Collabies Inc.</div>
 	
@@ -50,38 +52,39 @@ $(function() {
     $.post("/isloggedin",(data) => {
         if(data)  {
             changeSideBar("/entrance");
+            changeMainBar("/titlepage")
         } else { 
             changeSideBar("/profile");
             changeMainBar("/feed");
         }
     });
     
-    $("#ebttn").click(() => {
-        changeSideBar("/entrance");
-    });
-    
-    $("#abttn").click(() => {
-        changeSideBar("/account");
-    });
-    
-    $("#pbttn").click(() => {
-        changeSideBar("/profile");
-    });
-    
-    $("#tbttn").click(() => {
-        window.location.href='/display';
-    });
-    $("#fbttn").click(() => {
-        changeMainBar("/feed");
-//        window.location.href='/feed';
-    });
-    
-    
-    $("#dallbttn").click((e) => {
-        e.preventDefault();
-        $.post("/delete_all");
-        window.location.href='/display';
-    });
+//    Testing Tools
+//    $("#ebttn").click(() => {
+//        changeSideBar("/entrance");
+//    });
+//    
+//    $("#abttn").click(() => {
+//        changeSideBar("/account");
+//    });
+//    
+//    $("#pbttn").click(() => {
+//        changeSideBar("/profile");
+//    });
+//    
+//    $("#tbttn").click(() => {
+//        window.location.href='/display';
+//    });
+//    $("#fbttn").click(() => {
+//        changeMainBar("/feed");
+//    });
+//    
+//    
+//    $("#dallbttn").click((e) => {
+//        e.preventDefault();
+//        $.post("/delete_all");
+//        window.location.href='/display';
+//    });
 });
     
     

@@ -25,20 +25,44 @@ body {
 /*    background-color: rgba(0,0,0,.2);*/
 }
 
+.btn {
+    background-color: darkseagreen;
+    border: 1px solid #9a9;
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+a {
+    color: #444;
+}
+
+a:hover {
+    color: darkseagreen;
+    text-decoration: none;
+}
+
+hr {
+    height: 2px;
+    background-color: #0009;
+    border: none;
+}
+
 /* HOME */
 .large-bar {
     overflow: hidden;
 	min-height: 500px;
     max-width: 900px;
-    color: white;
-    background-color: rgba(0,0,0,.9);
+    color: #666;
+    background-color: #ddd;
     min-height: 100vh;
     float: right;
 }
 
 .small-bar {
     overflow: hidden;
-	background: rgba(256,256,256,.9);
+	background: #eee;
     min-height: 100vh;
     max-width: 500px;
     float: right;
@@ -49,6 +73,32 @@ body {
     position: absolute;
     left: 0;
     bottom: 50px;
+}
+
+
+.titlepageContainer {    
+    height: 100px;
+    margin: auto 0;
+    text-align: center;
+    background-color: #fff5;
+    box-shadow: 3px 3px #999;
+    border-radius: 1em;
+    float: left;
+    position: relative;
+    top: 65vh;
+}
+
+.titlepageContainer > h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#entranceBackground {
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    opacity: 0.5;
+    max-width: 60%;
 }
 
 /* Large Devices, Wide Screens */

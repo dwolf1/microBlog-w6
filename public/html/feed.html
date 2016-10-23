@@ -2,14 +2,12 @@
 
 <div id="feedContainer">
     <div class="row" id="feednav">
-        <div class="col-xs-4">
-            <a href="#" id="latestbttn"><div class="glyphicon glyphicon-pencil"></div></a>
-        </div>
-        <div class="col-xs-4">
-            <a href="#" id="accountbttn"><div class="glyphicon glyphicon-cog"></div></a>
+        <div class="col-xs-6">
         </div>
         <div class="col-xs-4">
             <input id="srch" name="srch" placeholder="search id">
+        </div>
+        <div class="col-xs-2">
             <a href="#" id="searchbttn" onclick="passVal()"><div class="glyphicon glyphicon-search"></div></a>
         </div>
     </div><br>    
@@ -21,8 +19,6 @@
 
 $(function() {
     allPosts();
-    
-    
 });
     
 function allPosts() {
@@ -34,14 +30,14 @@ function allPosts() {
                 var formData = {id:a[i].username};
                 $.post("/finduser", formData, (res) => {
                     var bval = $.parseJSON(res);
-                    createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                    createPost(bval.fname, bval.id, bval.picture, a[i].post, a[i].timestamp);       
                 });
             })(i);
         }
     });
 }
     
-function createPost(uname, ppic, ptext, pdate) {
+function createPost(uname, id, ppic, ptext, pdate) {
     $("#posts").append(
         "<div class=\'media\'>"+
             "<div class=\"media-left\">"+
@@ -49,7 +45,7 @@ function createPost(uname, ppic, ptext, pdate) {
             "</div>"+
 
             "<div class=\"media-body\">"+
-                "<h4 class=\"media-heading\">"+uname+"<small id=\'timestamp\'> Posted on: "+pdate+"</small></h4>"+
+                "<h4 class=\"media-heading\"><a href=\" \">"+uname+"</a> id:"+id+"<small id=\'timestamp\'> Posted on: "+pdate+"</small></h4>"+
                 "<hr>"+
                 "<p>"+ptext+"</p>"+
             "</div>"+
@@ -75,7 +71,7 @@ function passVal() {
                 var formData = {id:a[i].username};
                 $.post("/finduser", formData, (res) => {
                     var bval = $.parseJSON(res);
-                    createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                    createPost(bval.fname, bval.id, bval.picture, a[i].post, a[i].timestamp);       
                 });
             })(i);
             }
@@ -88,7 +84,7 @@ function passVal() {
                     var formData = {id:a[i].username};
                     $.post("/finduser", formData, (res) => {
                         var bval = $.parseJSON(res);
-                        createPost(bval.fname, bval.picture, a[i].post, a[i].timestamp);       
+                        createPost(bval.fname, bval.id, bval.picture, a[i].post, a[i].timestamp);       
                     });
                 })(i);
             }

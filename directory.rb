@@ -24,6 +24,8 @@ get('/posts'){ File.read(File.join('public', 'html/posts.html')) }
 
 get('/feed'){ File.read(File.join('public', 'html/feed.html')) }
 
+get('/titlepage'){ File.read(File.join('public', 'html/titlepage.html')) }
+
 get('/logout'){
     session.clear
     session[:id] = nil;
