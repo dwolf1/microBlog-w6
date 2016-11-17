@@ -30,15 +30,4 @@ home 	-> signup
 Here we sketched out what data was going to be saved in that databse and then what data each page was going to use from the database.
 User Table: username, fName, lName, Email, dob, Bio, LastActive, JoinDate, password,
 Post Table: userID, DateOfPost, PostText,
-
 Profile Page: Picture, Bio, posts, lastactive.
-
-
-CHECKLIST
-- SESSION THINGS
-- PROFILE DISPLAY FROM DB
-	- SEE OTHER PROFILES
-- LOGOUT 
-- DELETE
-- POSTING
-- UPDATE PICTURE
